@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story | 3 Years Together</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #ffebee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        h1 {
+            color: #d32f2f;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+            margin: 0 auto;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        .heart:before, .heart:after {
+            position: absolute;
+            content: "";
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: #ff4d6d;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .love-explosion {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .love-particle {
+            position: absolute;
+            font-size: 24px;
+            color: #ff4d6d;
+            opacity: 0;
+            animation: float-up 4s linear infinite;
+            text-shadow: 0 0 5px rgba(255,255,255,0.8);
+        }
+        
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) scale(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) scale(1) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .message {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>আমাদের ৩ বছর</h1>
+        <div class="heart"></div>
+        <div class="message">
+            <p>তোমাকে ভালোবাসি আজ, আগামীকাল এবং চিরকাল ❤️</p>
+        </div>
+    </div>
+    
+    <div class="love-explosion" id="loveExplosion"></div>
+    
+    <script>
+        // ক্রমাগত লাভ পার্টিকেল তৈরি
+        function createLoveParticles() {
+            setInterval(() => {
+                for(let i = 0; i < 5; i++) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('love-particle');
+                    heart.innerHTML = '❤';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = 3 + Math.random() * 3 + 's';
+                    heart.style.fontSize = 20 + Math.random() * 30 + 'px';
+                    heart.style.animationDelay = Math.random() * 1 + 's';
+                    document.getElementById('loveExplosion').appendChild(heart);
+                    
+                    // অ্যানিমেশন শেষ হলে হার্ট সরিয়ে ফেলা
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
+                }
+            }, 300);
+        }
+        
+        // বড় লাভ এক্সপ্লোশন তৈরি
+        function createLoveExplosion() {
+            setInterval(() => {
+                for(let i = 0; i < 30; i++) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('love-particle');
+                    heart.innerHTML = '❤';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = 2 + Math.random() * 2 + 's';
+                    heart.style.fontSize = 30 + Math.random() * 50 + 'px';
+                    heart.style.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
+                    document.getElementById('loveExplosion').appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 3000);
+                }
+            }, 5000); // প্রতি 5 সেকেন্ডে একটি বড় এক্সপ্লোশন
+        }
+        
+        // পেজ লোড হওয়ার পর অ্যানিমেশন শুরু
+        window.addEventListener('load', function() {
+            createLoveParticles();
+            createLoveExplosion();
+            
+            // প্রথম বড় এক্সপ্লোশন
+            setTimeout(() => {
+                for(let i = 0; i < 50; i++) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('love-particle');
+                    heart.innerHTML = '❤';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = 2 + Math.random() * 2 + 's';
+                    heart.style.fontSize = 30 + Math.random() * 50 + 'px';
+                    heart.style.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
+                    document.getElementById('loveExplosion').appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 3000);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
