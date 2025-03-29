@@ -797,41 +797,58 @@ iframe {
         
         /* Initial loading animation */
         .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            z-index: 9999;
-            transition: opacity 1s ease;
-        }
-        
-        .loading-heart {
-            font-size: 4rem;
-            color: white;
-            animation: pulse 1.5s infinite;
-            margin-bottom: 20px;
-        }
-        
-        .loading-text {
-            color: white;
-            font-size: 1.5rem;
-            font-family: 'Pacifico', cursive;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-        }
+    position: absolute; /* Change to absolute to position it at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    padding: 10px 0; /* Add some padding for spacing */
+    transition: opacity 1s ease;
+}
+
+.loading-heart {
+    font-size: 4rem;
+    color: white;
+    animation: pulse 1.5s infinite;
+    margin-bottom: 10px; /* Reduce margin to fit neatly at the top */
+}
+
+.loading-text {
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    margin-top: 0; /* Ensure there's no extra space above the text */
+}
+
+/* Optional: Add a pulse animation to the heart */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-heart">❤️</div>
         <div class="loading-text">Our Love Story...</div>
     </div>
+    
+    <!-- Your main content goes here -->
+    
+    
+    <!-- Your main content goes here -->
+    
 
     <div class="container">
         <div class="header">
@@ -1158,7 +1175,16 @@ window.onclick = function(event) {
     }
 }
 
-          
+window.onload = function() {
+    document.getElementById('loadingScreen').style.display = 'none';
+};
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById('loadingScreen').style.display = 'none';
+    }, 10000); // Delay of 5000ms (5 seconds) before hiding the loading screen
+};
+
+
     </script>
     
 </body>
