@@ -2,998 +2,1244 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Eid-ul-Fitr Greeting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Magical 3 Years | Eternal Love</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Pacifico&display=swap');
-        
+        .name-container {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .name {
+            font-size: 2.5em;
+            color: #333;
+            margin: 10px 0;
+        }
+        .plus {
+            font-size: 1.8em;
+            color: #888;
+        }
+        .combined {
+            font-size: 3em;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #e34949;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        /* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* iFrame Styling */
+iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
         :root {
-            --primary-color: #2c786c;
-            --secondary-color: #004445;
-            --accent-color: #f8b400;
-            --text-color: #333;
-            --light-bg: #fff9e6;
+            --primary-color: #ff4d6d;
+            --secondary-color: #ff8fa3;
+            --accent-color: #ffb3c1;
+            --dark-color: #590d22;
+            --light-color: #fff0f3;
+            --gold-color: #ffd700;
+            --silver-color: #c0c0c0;
         }
         
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
         
         body {
-            font-family: 'Amiri', serif;
-            margin: 0;
-            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--light-color), #ffccd5);
+            color: var(--dark-color);
+            overflow-x: hidden;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
-            background-size: cover;
-            overflow-x: hidden;
-            color: var(--text-color);
+            perspective: 1000px;
             touch-action: manipulation;
         }
         
-        .card {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        .container {
             width: 95%;
-            max-width: 550px;
-            padding: 30px;
-            text-align: center;
-            position: relative;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 25px 50px rgba(89, 13, 34, 0.3);
             overflow: hidden;
-            backdrop-filter: blur(8px);
-            border: 2px solid rgba(255, 255, 255, 0.4);
+            position: relative;
+            margin: 20px 0;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
             z-index: 10;
-            transition: all 0.5s ease;
-            margin: 20px 0;
-        }
-        
-        @media (min-width: 768px) {
-            .card {
-                padding: 40px;
-                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            }
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-        
-        .moon {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 70px;
-            height: 70px;
-            background: radial-gradient(circle at 30% 30%, #FFD700, #FFA500);
-            border-radius: 50%;
-            box-shadow: 
-                0 0 40px #FFD700,
-                0 0 70px rgba(255, 215, 0, 0.4);
-            z-index: 1;
-            animation: glow 3s infinite alternate;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        @media (min-width: 768px) {
-            .moon {
-                width: 100px;
-                height: 100px;
-                top: 20px;
-                right: 20px;
-                box-shadow: 
-                    0 0 60px #FFD700,
-                    0 0 100px rgba(255, 215, 0, 0.4);
-            }
-        }
-        
-        .moon::before {
-            content: "";
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 15px;
-            height: 15px;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 50%;
-            box-shadow: 
-                20px 5px 0 0 rgba(0, 0, 0, 0.2),
-                40px -5px 0 0 rgba(0, 0, 0, 0.1),
-                -5px 25px 0 0 rgba(0, 0, 0, 0.15);
-        }
-        
-        @media (min-width: 768px) {
-            .moon::before {
-                top: 15px;
-                left: 15px;
-                width: 20px;
-                height: 20px;
-                box-shadow: 
-                    30px 10px 0 0 rgba(0, 0, 0, 0.2),
-                    60px -10px 0 0 rgba(0, 0, 0, 0.1),
-                    -10px 40px 0 0 rgba(0, 0, 0, 0.15);
-            }
-        }
-        
-        @keyframes glow {
-            0% { 
-                box-shadow: 0 0 30px #FFD700, 0 0 50px rgba(255, 215, 0, 0.4);
-                transform: scale(1);
-            }
-            100% { 
-                box-shadow: 0 0 60px #FFD700, 0 0 90px rgba(255, 215, 0, 0.6);
-                transform: scale(1.05);
-            }
-        }
-        
-        h1 {
-            color: var(--primary-color);
-            margin-top: 15px;
-            font-size: 2.2rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 2;
-        }
-        
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 2.8rem;
-                margin-top: 20px;
-            }
-        }
-        
-        .arabic {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin: 10px 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        
-        @media (min-width: 768px) {
-            .arabic {
-                font-size: 2.5rem;
-                margin: 15px 0;
-            }
-        }
-        
-        p {
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 20px 0;
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        @media (min-width: 768px) {
-            p {
-                line-height: 1.8;
-                margin: 25px 0;
-                font-size: 1.3rem;
-            }
-        }
-        
-        .signature {
-            font-family: 'Pacifico', cursive;
-            color: var(--secondary-color);
-            margin-top: 30px;
-            font-size: 1.3rem;
-            position: relative;
-        }
-        
-        @media (min-width: 768px) {
-            .signature {
-                margin-top: 40px;
-                font-size: 1.5rem;
-            }
-        }
-        
-        .signature::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
-        }
-        
-        @media (min-width: 768px) {
-            .signature::before {
-                width: 100px;
-            }
-        }
-        
-        .eid-decoration {
-            width: 100px;
-            margin: 15px auto;
-            animation: swing 3s infinite alternate, float 6s infinite ease-in-out;
-            position: relative;
-            z-index: 2;
-            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
-        }
-        
-        @media (min-width: 768px) {
-            .eid-decoration {
-                width: 150px;
-                margin: 20px auto;
-            }
-        }
-        
-        @keyframes swing {
-            0% { transform: rotate(-10deg); }
-            100% { transform: rotate(10deg); }
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: float 6s ease-in-out infinite;
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            0% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.01); }
+            100% { transform: translateY(0px) scale(1); }
         }
         
-        .stars {
+        .container::before {
+            content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            z-index: -1;
+            border-radius: 35px;
+            opacity: 0.3;
+            filter: blur(20px);
+            animation: gradientShift 15s infinite alternate;
         }
         
-        .star {
-            position: absolute;
-            background-color: #FFD700;
-            width: 3px;
-            height: 3px;
-            border-radius: 50%;
-            animation: twinkle 2s infinite alternate;
-        }
-        
-        @media (min-width: 768px) {
-            .star {
-                width: 5px;
-                height: 5px;
-            }
-        }
-        
-        @keyframes twinkle {
-            0% { opacity: 0.2; transform: scale(0.8); }
-            100% { opacity: 1; transform: scale(1.3); }
-        }
-        
-        .btn {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            margin-top: 25px;
-            transition: all 0.4s ease;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(44, 120, 108, 0.5);
+            padding: 30px 20px;
+            text-align: center;
             position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            padding-bottom: 60px;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            animation: shine 8s infinite linear;
+        }
+        
+        .header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: linear-gradient(to right, 
+                var(--gold-color), 
+                var(--silver-color), 
+                var(--gold-color));
             z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            background: linear-gradient(to right, white, #ffe6eb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGlow 3s infinite alternate;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        .years-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        
+        .years {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 3px 3px 0 var(--dark-color);
+            position: relative;
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+        
+        .years-bg {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            background: linear-gradient(45deg, var(--gold-color), var(--silver-color));
+            z-index: -1;
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .love-letter {
+            padding: 25px;
+            background: white;
+            position: relative;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--primary-color);
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
             overflow: hidden;
         }
         
-        @media (min-width: 768px) {
-            .btn {
-                padding: 15px 35px;
-                font-size: 1.2rem;
-                margin-top: 30px;
-                box-shadow: 0 8px 25px rgba(44, 120, 108, 0.5);
-            }
+        .love-letter:hover {
+            transform: translateY(-5px) rotateY(5deg);
         }
         
-        .btn:hover {
-            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(44, 120, 108, 0.7);
-        }
-        
-        .btn:active {
-            transform: translateY(1px);
-        }
-        
-        .btn::before {
+        .love-letter::before {
             content: "";
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .mosque {
-            position: absolute;
-            bottom: -15px;
             left: 0;
             width: 100%;
-            height: 80px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0,20 L10,10 L20,20 L30,10 L40,20 L50,10 L60,20 L70,10 L80,20 L90,10 L100,20 Z" fill="%23004445"/></svg>') repeat-x;
-            background-size: contain;
-            opacity: 0.15;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ff4d6d" opacity="0.03" d="M20,50 Q35,20 50,50 T80,50 Q65,80 50,50 T20,50"></path></svg>');
+            opacity: 0.3;
+        }
+        
+        .letter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed var(--accent-color);
+            padding-bottom: 15px;
+            position: relative;
+        }
+        
+        .letter-header::after {
+            content: "✉️";
+            position: absolute;
+            right: -8px;
+            top: -12px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .letter-date {
+            font-style: italic;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+        
+        .letter-location {
+            font-weight: bold;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+        
+        .letter-content {
+            line-height: 1.6;
+            font-size: 1rem;
+            position: relative;
             z-index: 1;
         }
         
-        @media (min-width: 768px) {
-            .mosque {
-                bottom: -20px;
-                height: 120px;
-            }
+        .letter-content p {
+            margin-bottom: 12px;
+            text-align: justify;
         }
         
-        .floating-text {
+        .letter-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-top: 20px;
+            text-align: right;
+            position: relative;
+            display: inline-block;
+            padding-right: 30px;
+        }
+        
+        .letter-signature::after {
+            content: "";
             position: absolute;
-            font-size: 1.2rem;
-            color: rgba(44, 120, 108, 0.4);
-            font-weight: bold;
-            animation: floatText 20s infinite linear;
+            right: 0;
+            top: 50%;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+            animation: expand 2s infinite;
+        }
+        
+        @keyframes expand {
+            0% { width: 0; }
+            50% { width: 25px; }
+            100% { width: 0; }
+        }
+        
+        .memories-timeline {
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .memories-timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23ff4d6d" opacity="0.03"></circle></svg>');
+            background-size: 150px 150px;
+            opacity: 0.1;
+        }
+        
+        .timeline-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            font-family: 'Pacifico', cursive;
+        }
+        
+        .timeline-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, var(--gold-color), var(--silver-color), var(--gold-color));
+            border-radius: 3px;
+            animation: widthPulse 3s infinite;
+        }
+        
+        @keyframes widthPulse {
+            0% { width: 100px; }
+            50% { width: 150px; }
+            100% { width: 100px; }
+        }
+        
+        .memory-list {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .memory-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: translateY(20px);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .memory-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,77,109,0.1), rgba(255,179,193,0.05));
             z-index: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .memory-card:hover::before {
+            opacity: 1;
+        }
+        
+        .memory-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .memory-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        
+        .memory-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .memory-date i {
+            margin-right: 6px;
+            animation: spin 4s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .memory-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .memory-desc {
+            line-height: 1.6;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .interactive-section {
+            padding: 25px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--light-color), white);
+            position: relative;
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
+            margin-top: 30px;
+            margin-bottom: -15px;
+            z-index: 2;
+        }
+        
+        .interactive-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ff4d6d" opacity="0.05" d="M30,20 Q50,0 70,20 T100,20 Q80,40 60,60 T20,20 Q40,0 60,20 T100,20"></path></svg>');
+            opacity: 0.1;
+        }
+        
+        .interactive-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-family: 'Pacifico', cursive;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .interactive-title::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, var(--gold-color), var(--silver-color));
+            border-radius: 2px;
+        }
+        
+        .heart-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid white;
+            animation: pulse 2s infinite;
+        }
+        
+        .heart-btn::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(45deg);
+            transition: transform 0.5s ease;
+            opacity: 0;
+        }
+        
+        .heart-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(255, 77, 109, 0.5);
+            animation: none;
+        }
+        
+        .heart-btn:hover::before {
+            transform: rotate(45deg) translate(30%, 30%);
+            opacity: 1;
+            animation: shine 2s infinite;
+        }
+        
+        .heart-btn i {
+            margin-right: 8px;
+        }
+        
+        .countdown {
+            font-size: 1.4rem;
+            margin: 20px 0;
+            color: var(--dark-color);
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .countdown:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        .countdown::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
             pointer-events: none;
-            user-select: none;
+            animation: borderPulse 3s infinite;
         }
         
-        @media (min-width: 768px) {
-            .floating-text {
-                font-size: 1.8rem;
-            }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--dark-color), #3a0a1a);
+            color: white;
+            position: relative;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            padding-top: 30px;
         }
         
-        @keyframes floatText {
-            0% { transform: translateY(0) rotate(0deg) scale(0.5); opacity: 0; left: 10%; }
-            10% { opacity: 0.5; transform: scale(1); }
-            90% { opacity: 0.5; }
-            100% { transform: translateY(-800px) rotate(360deg) scale(0.5); opacity: 0; left: 90%; }
+        .footer p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
         }
         
-        .modal {
-            display: none;
+        .footer-heart {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+        
+        .floating-hearts {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 100;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .heart-particle {
+            position: absolute;
+            font-size: 20px;
+            color: var(--primary-color);
+            opacity: 0;
+            animation: float-up 5s linear forwards;
+            z-index: 1001;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+        
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
             backdrop-filter: blur(5px);
-            overflow-y: auto;
-            padding: 20px;
         }
         
-        .modal-content {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 20px;
-            max-width: 500px;
-            width: 95%;
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-content {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 90%;
+            width: 350px;
             text-align: center;
             position: relative;
-            animation: modalAppear 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-            border: 2px solid var(--accent-color);
-            overflow: hidden;
-            margin: 20px 0;
+            transform: scale(0.7);
+            opacity: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 2px solid var(--primary-color);
+            margin: 15px;
         }
         
-        @media (min-width: 768px) {
-            .modal-content {
-                padding: 40px;
-                box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            }
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+            opacity: 1;
         }
         
-        @keyframes modalAppear {
-            0% { transform: scale(0.5) rotate(-5deg); opacity: 0; }
-            100% { transform: scale(1) rotate(0); opacity: 1; }
+        .popup-content h3 {
+            font-family: 'Pacifico', cursive;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            animation: titleGlow 3s infinite alternate;
         }
         
-        .close-modal {
+        .popup-content p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        
+        .popup-close {
             position: absolute;
             top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
+            right: 10px;
+            background: var(--accent-color);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
-            color: #888;
-            transition: all 0.3s;
-            z-index: 101;
-            background: none;
-            border: none;
-            padding: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 0.9rem;
         }
         
-        @media (min-width: 768px) {
-            .close-modal {
-                top: 15px;
-                right: 20px;
-                font-size: 1.8rem;
-            }
-        }
-        
-        .close-modal:hover {
-            color: var(--primary-color);
+        .popup-close:hover {
+            background: var(--primary-color);
+            color: white;
             transform: rotate(90deg);
         }
         
-        .modal h2 {
+        .popup-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 77, 109, 0.4);
+        }
+        
+        .popup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 77, 109, 0.5);
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1001;
+            animation: sparkle 1s ease-out forwards;
+        }
+        
+        .love-explosion {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .love-explosion.active {
+            opacity: 1;
+        }
+        
+        .love-explosion span {
+            position: absolute;
+            font-size: 2rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            opacity: 0;
+            animation: explode 1s ease-out forwards;
         }
         
-        @media (min-width: 768px) {
-            .modal h2 {
-                font-size: 2.2rem;
-                margin-bottom: 25px;
+        @keyframes explode {
+            0% { transform: scale(0); opacity: 0; }
+            20% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+        
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0); opacity: 0; }
+        }
+        
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) scale(0) rotate(0deg);
+                opacity: 0;
             }
-        }
-        
-        .modal p {
-            color: var(--text-color);
-            font-size: 1rem;
-            margin: 15px 0;
-        }
-        
-        @media (min-width: 768px) {
-            .modal p {
-                font-size: 1.2rem;
-                margin: 20px 0;
+            10% {
+                opacity: 1;
             }
-        }
-        
-        .modal-img {
-            width: 80px;
-            margin: 15px auto;
-            animation: pulse 2s infinite;
-        }
-        
-        @media (min-width: 768px) {
-            .modal-img {
-                width: 120px;
-                margin: 20px auto;
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) scale(1) rotate(360deg);
+                opacity: 0;
             }
         }
         
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
         
-        .fireworks {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 5;
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-30%, -30%); }
+            100% { transform: rotate(30deg) translate(30%, 30%); }
         }
         
-        .envelope {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 70px;
-            height: 70px;
-            background-color: var(--accent-color);
-            transform: rotate(45deg);
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 3;
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
-        @media (min-width: 768px) {
-            .envelope {
-                top: -20px;
-                right: -20px;
-                width: 100px;
-                height: 100px;
-                box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            }
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 8px rgba(255,255,255,0.3); }
+            100% { text-shadow: 0 0 15px rgba(255,255,255,0.6); }
         }
         
-        .envelope i {
-            transform: rotate(-45deg);
-            color: white;
-            font-size: 1.5rem;
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
-        @media (min-width: 768px) {
-            .envelope i {
-                font-size: 2rem;
-            }
+        @keyframes borderPulse {
+            0% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.01); }
+            100% { opacity: 0.5; transform: scale(1); }
         }
         
-        .special-letter {
-            display: none;
-            background-color: var(--light-bg);
-            border-left: 5px solid var(--accent-color);
-            padding: 15px;
-            margin: 20px 0;
-            text-align: left;
-            position: relative;
-            border-radius: 8px;
-        }
-        
-        @media (min-width: 768px) {
-            .special-letter {
-                padding: 20px;
-                margin: 30px 0;
-            }
-        }
-        
-        .special-letter::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: linear-gradient(to right, var(--accent-color), transparent);
-        }
-        
-        @media (min-width: 768px) {
-            .special-letter::before {
-                height: 15px;
-            }
-        }
-        
-        .special-letter h3 {
-            color: var(--secondary-color);
-            margin-top: 0;
-        }
-        
-        .special-letter-btn {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            margin-top: 15px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        @media (min-width: 768px) {
-            .special-letter-btn {
-                padding: 10px 20px;
-                margin-top: 20px;
-                font-size: 1rem;
-            }
-        }
-        
-        .special-letter-btn:hover {
-            background: #e0a800;
-            transform: translateY(-2px);
-        }
-        
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #f00;
-            opacity: 0;
-            z-index: 100;
-            animation: confettiFall 5s linear forwards;
-        }
-        
-        @keyframes confettiFall {
-            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 1; }
-        }
-        
-        .heart {
-            position: absolute;
-            pointer-events: none;
-            animation: floatUp 4s linear forwards;
-            color: #ff6b6b;
-            font-size: 1.2rem;
-            z-index: 20;
-        }
-        
-        @media (min-width: 768px) {
-            .heart {
-                font-size: 1.5rem;
-            }
-        }
-        
-        @keyframes floatUp {
-            0% { transform: translateY(0) scale(0.5); opacity: 1; }
-            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
-        }
-        
-        /* New additions for better mobile experience */
-        .tap-indicator {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 0.8rem;
-            opacity: 0.8;
-            animation: pulse 2s infinite;
-            z-index: 100;
-            display: none;
-        }
-        
-        @media (max-width: 767px) {
-            .tap-indicator {
-                display: block;
-            }
-        }
-        
-        /* Improved touch targets */
-        button, .btn {
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-        }
-        
-        /* Prevent text selection on tap */
-        .no-select {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        /* Swipe-up animation for mobile */
-        @keyframes swipeUp {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        
-        .card {
-            animation: swipeUp 0.8s ease-out;
-        }
-        
-        /* Improved fireworks for mobile */
-        .firework {
-            position: absolute;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            animation: explode 0.8s ease-out forwards;
-        }
-        
-        /* Audio button */
-        .audio-btn {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background-color: var(--accent-color);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            cursor: pointer;
-            z-index: 10;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
+        /* Initial loading animation */
+        .loading-screen {
+    position: absolute; /* Change to absolute to position it at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    padding: 10px 0; /* Add some padding for spacing */
+    transition: opacity 1s ease;
+}
+
+.loading-heart {
+    font-size: 4rem;
+    color: white;
+    animation: pulse 1.5s infinite;
+    margin-bottom: 10px; /* Reduce margin to fit neatly at the top */
+}
+
+.loading-text {
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    margin-top: 0; /* Ensure there's no extra space above the text */
+}
+
+/* Optional: Add a pulse animation to the heart */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
     </style>
 </head>
-<body class="no-select">
-    <div class="card">
-        <div class="moon"></div>
-        <div class="stars" id="stars"></div>
-        <div class="mosque"></div>
-        <div class="envelope">
-            <i class="fas fa-envelope"></i>
-        </div>
-        
-        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50,10 L60,40 L90,40 L65,60 L75,90 L50,75 L25,90 L35,60 L10,40 L40,40 Z' fill='%23f8b400'/></svg>" alt="Eid Lantern" class="eid-decoration">
-        <div class="arabic">عيد مبارك</div>
-        <h1>Eid-ul-Fitr Mubarak!</h1>
-
-        <h2>Jaan pakhita amr </h2>
-        <br>
-        <p>first a english a likhesi jaan , valo kore porle bangla bujhe jabane ...</p>
-   
-        
-        <p>As the crescent moon is sighted and the holy month of Ramadan comes to an end, may Allah shower His blessings upon you and your family.</p>
-        
-        <p>May this Eid bring joy, peace, and prosperity to your life. May all your prayers be answered and your sacrifices appreciated.</p>
-        <p>May this Eid-ul-Fitr bring you endless happiness, peace, and prosperity. Wishing you and your family a blessed Eid filled with love and joy!</p>
-        
-        <div id="special-letter" class="special-letter">
-            <h3>Special Message for You</h3>
-           <p>Ei  Eid-er dine tumi jeno jano koto tuku important tumi amar jibon e.tumi amar ridoyer anondo, ar amar moner shanti. 🥰
-
-            Allah amader valobahsa shurokkhito rakhun, ar prottekta Eid e amra eibhabei shomporko majbut kore egiye jai.
-            Eid Mubarak, amar bhalobasha! 😘✨</p>
-          
-          <p>Ei  dine Allah tomar jibon shukh, shanti ar anonde puron kore din. 🥰 Tumi shudhu ekta din noy, prottekta din e eibhabei hasi mukhe thako. Tomar shathe ekdin shathe Eid celebrate korbo in-sha-allah</p>
-            <p>With all my love and warmest Eid wishes...</p>
-            <h2>Rabeya ji Eid Mubarak</h2>
-            <h3>Apnar hubby fuad </h3>
-
-        </div>
-        
-        <button id="show-letter-btn" class="special-letter-btn">Read Special Letter</button>
-        
-        <p class="signature">With warmest wishes,<br>Rabeya begam</p>
-        
-        <button id="wish-btn" class="btn">
-            <i class="fas fa-gift"></i> Click for Special Eid Wish
-        </button>
-        
-        <div class="audio-btn" id="audio-btn">
-            <i class="fas fa-music"></i>
-        </div>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-heart">❤️</div>
+        <div class="loading-text">Our Love Story...</div>
     </div>
     
-    <div id="floating-texts"></div>
-    <div id="fireworks"></div>
+    <!-- Your main content goes here -->
     
-    <div class="tap-indicator">Tap on elements to discover surprises!</div>
     
-    <!-- Modal Popup -->
-    <div id="eid-modal" class="modal">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50,10 L60,40 L90,40 L65,60 L75,90 L50,75 L25,90 L35,60 L10,40 L40,40 Z' fill='%23f8b400'/></svg>" alt="Eid Lantern" class="modal-img">
-            <h2>Eid-ul-Fitr Mubarak!</h2>
-            <p>Eid Mubarak, jaan pakhita amr.. ❤️✨</p>
-            <p>Amar jiboner shobcheye special manush tumi, ar ei shubho dine tomar shathe thakte na parleo, amar mon shobshomoy tomar kachhei ache. 🥰 Allah tomake shukh, shanti ar bhalobashay voriye rakuk. Ei Eid tumi onek enjoy koro, onek moja koro, ar shudhu hasi-hasi thako! 🌙💖</p>
-            <p>Bhalobasha rilo onekkk! 😘❤️</p>
-            <p>From the bottom of my heart, I wish you happiness, peace, and prosperity.</p>
-            <p class="signature">Eid Mubarak!<br> Arpa ji ...</p>
-            <h3>Love you jaan....</h3>
-            <h4> Created by : are ajob ! keda banabo ? ami banaisi ami , apnar habby fuad , apnar see.... </h4>
-            <button id="send-hearts-btn" class="btn" style="margin-top: 20px;">
-                <i class="fas fa-heart"></i> Send Hearts
+    <!-- Your main content goes here -->
+    
+
+    <div class="container">
+        <div class="header">
+            <h1>আমাদের তিন বছর</h1>
+            <div class="subtitle">Our magical story </div>
+            <div class="years-container">
+                <div class="years-bg"></div>
+                <div class="years">3 Years</div>
+            </div>
+            <div class="subtitle">Date - 31 march 2022 to 31 march 2025 </div>
+        </div>
+        <div id="loveStoryModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <iframe src="love-story.html"></iframe>
+            </div>
+        </div>
+
+        
+        <div class="love-letter">
+            <div class="letter-header">
+                <div class="letter-date">31 march 2025</div>
+            </div>
+            <div class="letter-content">
+                <p>প্রিয়তমা,</p>
+                <p>আজ আমাদের সম্পর্কের ৩ বছর পূর্ণ হলো, আর এই বিশেষ দিনটিকে উদযাপন করতে আমি ভাবছি, কীভাবে তোমার কাছে আমার অনুভূতিগুলো আরও সুন্দরভাবে পৌঁছে দেয়া যায়। তিন বছর! ভাবতে অবাক লাগছে, কিভাবে সময় এত দ্রুত চলে গেলো। কিন্তু যখন আমি ফিরে তাকাই, তখন মনে হয় যেন একে একে প্রতিটি দিন আমাদের জীবনে অমূল্য হয়ে গেছে। আমরা একে অপরকে শুধু ভালোবাসিনি, একে অপরকে বুঝতে চেষ্টা করেছি, একে অপরের পাশে থেকেছি যখন প্রয়োজন ছিল, আর জীবনের প্রতিটি পালাতে একে অপরের জন্য শক্তি হয়েছি।
+
+                    তুমি আমার জীবনে এমন একটি উপস্থিতি, যাকে আমি কখনোই ভাবতে পারি না বাদ দিয়ে। তোমার হাসি, তোমার কথা, তোমার উপস্থিতি—এগুলো সব আমার জীবনকে অন্য রকম করে দিয়েছে। তোমার সঙ্গে কাটানো প্রতিটি দিন আমার কাছে এক একটি অমূল্য মুহূর্ত। আমি জানি, আমরা সবসময় একে অপরকে বুঝতে পারি না, কখনো কখনো ভুল বুঝাবুঝি হয়ে যায়, কিন্তু সেগুলোও আমাদের সম্পর্ককে আরো মজবুত করে তুলেছে, কারণ আমরা জানি, সব কিছু একসাথে কাটিয়ে যেতে পারবো।</p><p>তুমি আমার জীবনে এমন একটি জায়গা দখল করেছো, যা অন্য কেউ কখনোই পূর্ণ করতে পারবে না। তোমার ভালোবাসা ও সহানুভূতি আমাকে প্রতিদিন নতুন করে উৎসাহিত করে। তোমার জন্য, আমি নিজের সেরা সংস্করণ হতে চাই, কারণ তুমি তো আমার জীবনের সেরা উপহার। তুমি আমাকে সাহস দিয়েছো, কখনো আমি হারিয়ে গিয়েছি তখন তুমি আমাকে পথ দেখিয়েছো, তোমার স্নেহ ও ভালোবাসা আমাকে শক্তি দিয়েছে, আর তোমার সাথে কাটানো প্রতিটি মুহূর্ত আমার জীবনের সবচেয়ে মূল্যবান সময়।</p>
+                 <p>তুমি আমার জীবনে আসার পর, পৃথিবীটা আরও রঙিন হয়ে উঠেছে। তুমি শুধু আমার গার্লফ্রেন্ড নও, তুমি আমার সেরা বন্ধু, সহযাত্রী, এবং একজন আশ্রয়ও। আমি প্রতিদিন তোমার পাশে থাকতে চাই, তোমার হাসি দেখতে চাই, এবং একসাথে আমাদের ভবিষ্যৎ তৈরি করতে চাই।</p>              
+                 <p>তুমি আমাকে যে ভালোবাসা দিয়েছো, তা আমি কোনো ভাষায় প্রকাশ করতে পারব না। তোমার সেই ভালোবাসা, যতদিন বাঁচবো, আমি সেটি ধারণ করবো, সব সময় তোমাকে কাছে অনুভব করবো। যখন তুমি আমার পাশে থাকো, তখন পৃথিবীটা সত্যি শান্ত লাগে, প্রতিটি মুহূর্ত আরো রঙিন হয়ে উঠে। তুমি আমার জীবনে এক একটি স্বপ্নের মতো, এবং আমি বিশ্বাস করি, এই সম্পর্কটা আমাদের জীবনের সবচেয়ে সুন্দর গল্প হবে।
+
+                    আমরা একে অপরকে সম্পূর্ণ জানি, আমরা একে অপরকে ঠিকভাবে বুঝতে পারি, কিন্তু আমি বিশ্বাস করি, আমাদের সম্পর্কটা শুধু ভালোবাসার নয়, এর মধ্যে আছে একে অপরকে সম্মান করা, একে অপরের দুর্বলতা ও শক্তি মেনে নেয়া, আর একে অপরের পাশে দাঁড়িয়ে জীবনের প্রতিটি মুহূর্তে এগিয়ে চলা।</p>
+                    <p>ধন্যবাদ, যে তুমি আমার জীবনে এসেছো। তুমি না হলে, আমি জানি না কিভাবে আমার জীবন এইভাবে পূর্ণ হতো। তোমার কারণে, প্রতিটি দিন সোনালী হয়ে উঠেছে, এবং আমি তোমার পাশে থেকে সব কিছু সামলাতে চাই। তুমি আমার সবচেয়ে মূল্যবান, অমূল্য রত্ন, এবং আমি তোমাকে চিরকাল ভালোবাসবো। ইনশাআল্লাহ।
+
+                        তোমার সাথে আরও অনেক বছর কাটানোর অপেক্ষায় আছি, কারণ তোমার পাশে আমি সব কিছু ভালোভাবে দেখতে পাচ্ছি, এবং আমি জানি, একসাথে আমরা জীবনের সব অন্ধকার পথ পেরিয়ে আলোর দিকে এগিয়ে যাবো। ইনশাআল্লাহ।</p>
+               
+                    <p>আজ যখন এই চিঠি লিখছি, হৃদয় ভরে উঠছে অসংখ্য স্মৃতিতে। এই তিনটি বছর আমাদের জন্য এনেছে অগণিত সুন্দর মুহূর্ত, হাসি-কান্না, আবেগ আর ভালোবাসার অজস্র স্পন্দন।</p>
+                <p>তোমার সাথে প্রতিটি দিন আমার জীবনের সবচেয়ে মূল্যবান উপহার। তুমি আমাকে শিখিয়েছো কিভাবে ভালোবাসতে হয়, কিভাবে কাউকে সত্যিকার অর্থে গুরুত্ব দিতে হয়। তোমার হাসি আমার দিন আলোকিত করে, তোমার উপস্থিতি আমার জীবনকে অর্থবহ করে তোলে।</p>
+                <p>এই যাত্রায় তোমাকে পাশে পেয়ে আমি ধন্য। আশা করি আগামী দিনগুলোতেও একসাথে হেঁটে যাবো, নতুন স্বপ্ন দেখবো এবং আমাদের ভালোবাসাকে আরও গভীর করে তুলবো।</p>
+                <p>তোমার ছোট্ট ভুলগুলো, আবদারগুলো, রাগ-অভিমান সবকিছুই আমার কাছে খুব প্রিয়। তুমি যেমন আছ ঠিক তেমনটাই থাকো, কারণ সেই তুমিই আমার সবচেয়ে প্রিয়।</p>
+
+            </div>
+
+            <div class="letter-signature">চিরকাল তোমার,<br> ফুয়াদ </div>
+        </div>
+        
+        <div class="interactive-section">
+            <br>
+            <button class="heart-btn">
+                <i class="fas fa-heart"></i> Fuad Hassan Rabby <br><br>+<br><br>Rabeya Bosri Arpa
             </button>
         </div>
-    </div>
 
+        <div class="interactive-section">
+            <br>
+            <button class="heart-btn">
+                <i class="fas fa-heart"></i> I love you so much jaan.....
+            </button>
+        </div>
+
+        <div class="interactive-section">
+            <br>
+            <button onclick="openModal()" class="heart-btn">
+                <i class="fas fa-heart"></i> এখানে ক্লিক করুন! ম্যাডাম 🎉
+            </button>
+        </div>
+        <div class="memories-timeline">
+            <h2 class="timeline-title">আমাদের স্মৃতিগুলো</h2>
+            <div class="memory-list">
+                <div class="memory-card">
+                    <div class="memory-date"><i class="fas fa-heart"></i> তারিখ ৩১ মার্চ </div>
+                    <h3 class="memory-title">প্রথম দেখা</h3>
+                    <p class="memory-desc"> mone ase ki ? oije khairul vai der bari picnic er din , yes eta ei din ei 31 march e chilo jedin tumi raji hoiechile, oidin saradin e prai ami oi picnic a chilam onk gula fhoto o tulechilam tmr jrgula ekhono ase amr kase , tmr o onk sundor lagchilo oi din o , amnitew tumi all time e amr kase onk sundor , onk agei tmr e propose korar pore ei din eshe raji hoiochile, mehedi bolchilo emn o to hote pare just use korbe tore taw ami kisu na vebei tmr sathe rilation a gesilam , ai dinei first tmmr onk fhoto tula officially tmr sathe rilation a jawa , aidin saradin onk happy chilam ami tmr a nie koto soto vabna koto kisu koto fhoto tula ,,, <p> <span class="footer-heart">💙</span></p>
+                 tarpore rai ashlo agami kal mane 1 april school jeye kotha hosse tmr sathe amr shopner princess er sathe ...</p>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-date"><i class="fas fa-star"></i> তারিখ ১ এপ্রিল </div>
+                    <h3 class="memory-title">প্রথম কথা</h3>
+                    <p class="memory-desc">ami to onk exited onk asha new kisu amn koto kisu vebe school e gelam , jeye nie wait korsi kokhon amr se ashbe kotha bolbo abr tumi ashle , oi time a obosso sayed amake buddhi dissilo kmne kmne ki ki kotha bola jai , kmne suru kora jai , tarpore amader 10 er class er samne tumi ashle and amader kisu kotha holo obosso amr hat pa onk kaptechilo tmr sathe kotha bolar time a onk ghamchilam taw onk kosto kore kisu kotha bola holo obosheshe.... tarpor abr tifin time a 2 tolai jeye kotha hobe bollam duijon dui jon ke tarpor tifin time e dui tolai onk kothai holo amader ...
+
+                    </p>
+                </div>
+                <div class="memory-card">
+                    <div class="memory-date"><i class="fas fa-star"></i>বিশেষ বার্তা  </div>
+                    <h3 class="memory-title"></h3>
+                    <p>                ১.
+                        প্রিয় ,
+                        তুমি আমার জীবনে এমন একটি স্পেশাল উপহার, যা আমি কোনো দিন ভাবতেও পারতাম না। তোমার হাসি, তোমার ভালোবাসা, তোমার সঙ্গ—সব কিছু আমার জীবনকে পূর্ণ করেছে। প্রতিদিন তোমার সাথে কাটানো সময় আমার জন্য অমূল্য। তুমি যখন পাশে থাকো, পৃথিবীটা সুন্দর হয়ে ওঠে। আজকে ৩ বছর হয়ে গেল, কিন্তু আমি জানি, আমাদের গল্প এখানেই থামবে না। প্রতিটি দিন নতুন কিছু শিখছি, নতুন কিছু অনুভব করছি, এবং আমি চাই জীবনের শেষ দিন পর্যন্ত তোমার সঙ্গে এই যাত্রা চালিয়ে যেতে। ভালোবাসি তোমাকে।
+                        
+                        ২.
+                        তুমি আমার জীবনে আসার পর থেকে সবকিছু বদলে গেছে। প্রতিটি মুহূর্ত তোমার সাথে কাটানো মানে একটা নতুন অভিজ্ঞতা, নতুন হাসি, নতুন স্মৃতি। তুমি শুধু আমার গার্লফ্রেন্ড নও, তুমি আমার আত্মার অংশ, আমার সঙ্গী, আমার ভালোবাসা। ৩ বছর একসাথে কাটানো সহজ ছিল না, কিন্তু প্রতিটি চ্যালেঞ্জে আমরা একে অপরকে আরও শক্তিশালী করে তুলেছি। আমি প্রতিদিন তোমার পাশে থেকে শিখি, আর জানি যে আমাদের সম্পর্ক আরও গভীর হবে। তোমাকে ভালোবাসি, অশেষ ভালোবাসা।
+                        
+                        ৩.
+                        প্রিয় ,
+                        আজকে আমাদের সম্পর্কের ৩ বছর পূর্ণ হচ্ছে, এবং এই সময়ে আমাদের মধ্যে অনেক স্মৃতি জমা হয়েছে। কিন্তু সব স্মৃতির মধ্যে, সবচেয়ে ভালো যে মুহূর্তটি আমি মনে রাখি, সেটা হল যখন তুমি প্রথম আমাকে বলেছিলে, "আমি তোমার সঙ্গে থাকতে চাই।" সেই দিন থেকে আমি জানি, এই সম্পর্কটা আমার জীবনের সবচেয়ে গুরুত্বপূর্ণ অংশ হবে। তোমার পাশে থাকলে, আমি জানি, জীবনের প্রতিটি মুহূর্ত একদম বিশেষ হয়ে ওঠে। তোমার জন্য আমি সব কিছু করতে চাই, আর ভবিষ্যতে একসাথে আরও অনেক সুন্দর সময় কাটাতে চাই। ভালোবাসি তোমাকে, চিরকাল।
+                        
+                        ৪.
+                        ৩ বছর আগে যখন আমরা একে অপরকে জানতাম, তখন কেউই জানতাম না কীভাবে আমাদের সম্পর্ক গড়ে উঠবে। কিন্তু আজকে, আমাদের সম্পর্ক একদিকে স্নেহের, অন্যদিকে শক্তির প্রতীক হয়ে উঠেছে। প্রতিটি দিন আমরা একে অপরকে ভালোবাসছি, একে অপরকে বুঝতে শিখছি, আর একে অপরকে প্রাপ্য সম্মান দিচ্ছি। তুমি আমার জীবনের সবচেয়ে সুন্দর অধ্যায়, এবং আমি চাই আমাদের এই গল্প আরও দীর্ঘ হোক। তুমি আমার প্রেম, আমার বন্ধু, আমার সঙ্গী। তুমি ছাড়া আমি অসম্পূর্ণ, তোমার কাছে আমি পুরোপুরি।
+                        
+                        ৫.
+                        এটা তো শুধু ৩ বছর নয়, এটা আমাদের একে অপরকে আরো ভালোভাবে জানার, আরো ভালোবাসার, আর একে অপরকে সম্পূর্ণভাবে গ্রহণ করার একটি যাত্রা। তুমি আমার জীবনে আসার পর থেকেই সব কিছু ভালো লাগতে শুরু করেছে। তোমার এক একটা হাসি, তোমার কথাগুলি, তোমার সঙ্গ—সব কিছু যেন আলাদা অনুভূতি তৈরি করে। আমি শুধু চাই, তোমার সাথে আরও অনেক বছর কাটাতে, একসাথে জীবনের সব কিছু মোকাবেলা করতে, এবং একে অপরকে সর্বদা ভালোবাসতে। তুমি আমার জীবনের অমূল্য রত্ন, এবং আমি তোমাকে অনেক বেশি ভালোবাসি।</p>
+
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-date"><i class="fas fa-calendar-heart"></i>                 <p>আজকের দিনটা আমাদের জন্য বিশেষ, কারণ আজকে আমাদের সম্পর্কের ৩ বছর পূর্ণ হচ্ছে। যখন আমি ভাবি, এই ৩ বছর কীভাবে কেটে গেলো, তখন মনে হয় যেন এক মুহূর্তে সব কিছু হয়ে গেছে। কিন্তু যখন আমাদের একে অপরকে প্রথম দেখেছিলাম, আমরা জানতাম না এই সম্পর্কের মাধ্যমে আমাদের জীবনে কী পরিবর্তন আসবে। এখন, প্রতিটি মুহূর্তে আমি অনুভব করি, তোমার সঙ্গে থাকা মানে এক অমূল্য যাত্রায় অংশগ্রহণ করা।
+
+                        ৩ বছর আগে আমরা একে অপরকে জানার শুরু করেছিলাম, আর আজ, আমি বলতে পারি, তুমি আমার জীবনের এক অবিচ্ছেদ্য অংশ। তোমার হাসি, তোমার আদর, তোমার খেয়াল রাখার ধরন, তোমার সহানুভূতি—এই সবকিছু আমাকে প্রতিদিন আনন্দ দেয়। আমরা একে অপরের শক্তি, একে অপরের জন্য আশ্রয়। আমাদের সম্পর্ক কখনোই সহজ ছিল না, কিন্তু প্রতিটি চ্যালেঞ্জ আমাদের আরও কাছাকাছি এনেছে, আমাদের সম্পর্ক আরও দৃঢ় করেছে।
+                        
+                        তুমি আমার জীবনের সেরা উপহার, এমন একটি উপহার যা আমি কোনো দিন কল্পনা করতাম না। তুমি যখন পাশে থাকো, পৃথিবীটা অন্যরকম হয়ে ওঠে। আমি প্রতিটি দিন নতুন করে তোমাকে জানতে চাই, প্রতিটি মুহূর্তে তোমার সঙ্গে কাটানো সময়গুলো আমার জন্য বিশেষ হয়ে থাকে। আমি জানি, আমাদের সামনে অনেক সময় অপেক্ষা করছে, আরও অনেক পথ আমাদের একসাথে চলতে হবে। এই ৩ বছরে যা কিছু শিখেছি, সেটা আমাদের ভবিষ্যত আরও সুন্দর করবে, ইনশাআল্লাহ।
+                        
+                        আমরা একে অপরকে সময় দিয়েছি, একে অপরকে বুঝেছি, একে অপরের পাশে দাঁড়িয়েছি। আর এই সবই আমাদের সম্পর্ককে শক্তিশালী করেছে। যখন তুমি পাশে থাকো, তখন আমি জানি, কোনো কিছুই আমাকে ভয় দেখাতে পারবে না। তুমি আমার জীবনের সমর্থন, আমার প্রেরণা, আর আমি তোমার জন্য সবকিছু করতে প্রস্তুত। তুমি একেবারে সেই মানুষ, যার সঙ্গে আমি আমার প্রতিটি স্বপ্ন গড়তে চাই, যার সঙ্গে আমি ভবিষ্যত পরিকল্পনা করতে চাই।
+                        
+                        আজকের এই দিনে, আমি শুধু চাই, আমাদের সম্পর্ক আরও অনেক বছর এগিয়ে যাক, আরও অনেক সুন্দর স্মৃতি তৈরি করুক। আমরা একে অপরকে আরও ভালোভাবে জানবো, আরও সহানুভূতিশীল হবো, এবং একে অপরকে আরও ভালোবাসবো। তোমার সঙ্গে জীবন কাটানো আমার জীবনের সবচেয়ে সুন্দর সিদ্ধান্ত ছিল। আমি চাই, আমরা এই সম্পর্কের প্রতিটি মুহূর্তকে উপভোগ করি, যাতে একদিন আমরা মনে করতে পারি, এই ৩ বছর আমাদের জীবনের সেরা সময় ছিল।
+                        
+                        ধন্যবাদ, যে তুমি আমার জীবনে এসেছো। তুমি ছাড়া আমি কল্পনাও করতে পারতাম না আমার জীবন কীভাবে হবে। আমি বিশ্বাস করি, আমাদের সম্পর্ক এই পৃথিবীর সবচেয়ে সুন্দর সম্পর্ক হবে, এবং ভবিষ্যতে আরও অনেক ভালো সময় আমাদের জন্য অপেক্ষা করছে। ইনশাআল্লাহ, আমরা একসাথে আরও অনেক বছর কাটাবো, একে অপরকে বুঝবো, ভালোবাসবো, আর জীবনটা সুন্দর করে গড়বো।
+                        
+                        ভালোবাসি তোমাকে অশেষ। </p></div>
+                    <h3 class="memory-title"></h3>
+                    <p class="memory-desc"></p>
+                </div>
+                <div class="memory-card">
+                    <div class="memory-date"><i class="fas fa-calendar-heart"></i> তুমি আমার জীবনের সবচেয়ে দামি মানুষ , আর আমি চিরকাল তোমার সঙ্গে থাকতে চাই। ভালোবাসি তোমাকে, একান্তভাবে।</div>
+                    <h3 class="memory-title"></h3>
+                    <p class="memory-desc"></p>
+                </div>
+                
+            </div>
+        </div>
+        
+
+        
+        <div class="footer">
+            <p>তোমাকে ভালোবাসি আজ, আগামীকাল এবং চিরকাল <span class="footer-heart">💙</span></p>
+            <p> আপনার ফুয়াদ  </p>
+            <p>Created by Fuad Hassan <span class="footer-heart">💙</span></p>
+        </div>
+    </div>
+    
+    <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <!-- Love Explosion Effect -->
+    <div class="love-explosion" id="loveExplosion"></div>
+    
+    
     <script>
-        // Create stars
-        const starsContainer = document.getElementById('stars');
-        for (let i = 0; i < 80; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.animationDelay = `${Math.random() * 2}s`;
-            star.style.width = `${Math.random() * 4 + 2}px`;
-            star.style.height = star.style.width;
-            starsContainer.appendChild(star);
-        }
+        // লোডিং স্ক্রিন হাইড
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                    // লোড হওয়ার পর লাভ এক্সপ্লোশন দেখান
+                    showLoveExplosion();
+                }, 1000);
+            }, 1500);
+        });
         
-        // Create floating Eid texts
-        const floatingTexts = document.getElementById('floating-texts');
-        const eidTexts = ["Eid Mubarak", "عيد مبارك", "Blessed Eid", "Happy Eid", "Eid Greetings", "Selamat Hari Raya", "Eid Sa'id"];
-        
-        function createFloatingText() {
-            const text = document.createElement('div');
-            text.classList.add('floating-text');
-            text.textContent = eidTexts[Math.floor(Math.random() * eidTexts.length)];
-            text.style.left = `${Math.random() * 100}%`;
-            text.style.fontSize = `${Math.random() * 20 + 10}px`;
-            text.style.animationDuration = `${Math.random() * 15 + 10}s`;
-            text.style.color = `hsl(${Math.random() * 60 + 30}, 70%, 60%)`;
-            floatingTexts.appendChild(text);
+        // মেমোরি এলিমেন্টগুলোকে পর্যায়ক্রমে দেখানো
+        document.addEventListener('DOMContentLoaded', function() {
+            const memories = document.querySelectorAll('.memory-card');
+            memories.forEach((memory, index) => {
+                setTimeout(() => {
+                    memory.classList.add('visible');
+                }, 300 * index);
+            });
             
-            setTimeout(() => {
-                text.remove();
-            }, 20000);
-        }
-        
-        setInterval(createFloatingText, 1000);
-        
-        // Modal functionality
-        const modal = document.getElementById('eid-modal');
-        const btn = document.getElementById('wish-btn');
-        const closeBtn = document.querySelector('.close-modal');
-        
-        // Special letter button
-        document.getElementById('show-letter-btn').addEventListener('click', function() {
-            const letter = document.getElementById('special-letter');
-            if (letter.style.display === 'block') {
-                letter.style.display = 'none';
-                this.textContent = 'Read Special Letter';
-            } else {
-                letter.style.display = 'block';
-                this.textContent = 'Hide Letter';
+            // হার্ট বাটন ক্লিক ইভেন্ট
+            const heartButton = document.getElementById('heartButton');
+            const heartsContainer = document.getElementById('heartsContainer');
+            
+            heartButton.addEventListener('click', function(e) {
+                createSparkle(e.clientX, e.clientY);
+                
+                // হার্ট পার্টিকেল তৈরি
                 createHearts();
-                createConfetti();
-            }
-        });
-        
-        // Main wish button
-        btn.addEventListener('click', function() {
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            createFireworks();
-            createConfetti();
-        });
-        
-        // Close modal when clicking X button
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Send hearts button
-        document.getElementById('send-hearts-btn').addEventListener('click', function() {
-            createHearts();
-            createConfetti();
-        });
-        
-        // Fireworks effect
-        function createFireworks() {
-            const fireworksContainer = document.getElementById('fireworks');
-            fireworksContainer.innerHTML = '';
+                
+                // বিশেষ মেসেজ দেখানো
+                const messages = [
+                    "তুমি আমার সবচেয়ে সুন্দর স্বপ্ন!",
+                    "তোমাকে ভালোবাসি আকাশের সবচেয়ে উজ্জ্বল তারার মতো!",
+                    "তোমার হাসিই আমার জীবনের সবচেয়ে সুন্দর দৃশ্য",
+                    "তোমার সাথে প্রতিটি মুহূর্তই আমার জন্য বিশেষ"
+                ];
+                
+                const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+                showPopup("আমার প্রিয়তমা", randomMessage);
+            });
             
-            const fireworksCount = window.innerWidth < 768 ? 30 : 50;
-            
-            for (let i = 0; i < fireworksCount; i++) {
+            // স্পার্কল ইফেক্ট তৈরি
+            function createSparkle(x, y) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                sparkle.style.left = x + 'px';
+                sparkle.style.top = y + 'px';
+                document.body.appendChild(sparkle);
+                
                 setTimeout(() => {
-                    const firework = document.createElement('div');
-                    firework.classList.add('firework');
-                    firework.style.left = `${Math.random() * 100}%`;
-                    firework.style.top = `${Math.random() * 100}%`;
-                    firework.style.width = `${Math.random() * 10 + 3}px`;
-                    firework.style.height = firework.style.width;
-                    firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-                    firework.style.borderRadius = '50%';
-                    firework.style.position = 'absolute';
-                    firework.style.boxShadow = `0 0 ${Math.random() * 10 + 3}px ${Math.random() * 5 + 1}px gold`;
-                    firework.style.animation = `explode ${Math.random() * 0.6 + 0.3}s ease-out forwards`;
-                    
-                    fireworksContainer.appendChild(firework);
-                    
-                    setTimeout(() => {
-                        firework.remove();
-                    }, 800);
-                }, i * 100);
+                    sparkle.remove();
+                }, 1000);
             }
             
-            const style = document.createElement('style');
-            style.innerHTML = `
-                @keyframes explode {
-                    0% { transform: scale(1); opacity: 1; }
-                    100% { transform: scale(${Math.random() * 10 + 3}); opacity: 0; }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-        
-        // Confetti effect
-        function createConfetti() {
-            const confettiCount = window.innerWidth < 768 ? 50 : 100;
-            
-            for (let i = 0; i < confettiCount; i++) {
-                setTimeout(() => {
-                    const confetti = document.createElement('div');
-                    confetti.classList.add('confetti');
-                    confetti.style.left = `${Math.random() * 100}%`;
-                    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-                    confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
-                    confetti.style.width = `${Math.random() * 8 + 4}px`;
-                    confetti.style.height = `${Math.random() * 8 + 4}px`;
-                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                    document.body.appendChild(confetti);
-                    
-                    setTimeout(() => {
-                        confetti.remove();
-                    }, 5000);
-                }, i * 50);
-            }
-        }
-        
-        // Hearts effect
-        function createHearts() {
-            const heartCount = window.innerWidth < 768 ? 10 : 20;
-            
-            for (let i = 0; i < heartCount; i++) {
-                setTimeout(() => {
+            // হার্ট পার্টিকেল ফাংশন
+            function createHearts() {
+                for (let i = 0; i < 20; i++) {
                     const heart = document.createElement('div');
-                    heart.classList.add('heart');
-                    heart.innerHTML = '<i class="fas fa-heart"></i>';
-                    heart.style.left = `${Math.random() * 100}%`;
-                    heart.style.bottom = '0';
-                    heart.style.animationDuration = `${Math.random() * 2 + 2}s`;
-                    heart.style.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
-                    document.body.appendChild(heart);
+                    heart.classList.add('heart-particle');
+                    heart.innerHTML = ['❤', '🧡', '💛', '💚', '💙', '💜', '🤎', '🖤', '🤍'][Math.floor(Math.random() * 9)];
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = 2 + Math.random() * 3 + 's';
+                    heart.style.fontSize = 15 + Math.random() * 25 + 'px';
+                    heart.style.animationDelay = Math.random() * 0.5 + 's';
+                    heartsContainer.appendChild(heart);
                     
+                    // অ্যানিমেশন শেষ হলে হার্ট সরিয়ে ফেলা
                     setTimeout(() => {
                         heart.remove();
-                    }, 4000);
-                }, i * 200);
+                    }, 5000);
+                }
+            }
+            
+            // কাউন্টডাউন টাইমার
+            function updateCountdown() {
+                const now = new Date();
+                const nextAnniversary = new Date(now.getFullYear() + 1, 4, 15); // পরবর্তী বার্ষিকীর তারিখ সেট করুন (মাস 0-11)
+                
+                const diff = nextAnniversary - now;
+                
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                
+                document.getElementById('timer').innerHTML = 
+                    `<span style="color: var(--primary-color)">${days}</span> দিন 
+                    <span style="color: var(--secondary-color)">${hours}</span> ঘণ্টা 
+                    <span style="color: var(--accent-color)">${minutes}</span> মিনিট 
+                    <span style="color: var(--dark-color)">${seconds}</span> সেকেন্ড`;
+            }
+            
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+            
+            // স্ক্রল ইভেন্টে মেমোরি দেখা যাবে
+            window.addEventListener('scroll', function() {
+                const memories = document.querySelectorAll('.memory-card:not(.visible)');
+                const windowHeight = window.innerHeight;
+                
+                memories.forEach(memory => {
+                    const memoryPosition = memory.getBoundingClientRect().top;
+                    if (memoryPosition < windowHeight - 100) {
+                        memory.classList.add('visible');
+                    }
+                });
+            });
+        });
+        
+        // লাভ এক্সপ্লোশন ফাংশন
+        function showLoveExplosion() {
+            const loveExplosion = document.getElementById('loveExplosion');
+            loveExplosion.innerHTML = '';
+            loveExplosion.classList.add('active');
+            
+            // 30টি লাভ হার্ট তৈরি
+            for(let i = 0; i < 30; i++) {
+                const heart = document.createElement('span');
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.animationDelay = Math.random() * 0.5 + 's';
+                heart.style.fontSize = (1 + Math.random() * 3) + 'rem';
+                heart.style.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
+                loveExplosion.appendChild(heart);
+            }
+            
+            // 3 সেকেন্ড পর হাইড করুন
+            setTimeout(() => {
+                loveExplosion.classList.remove('active');
+            }, 3000);
+        }
+        
+        // পপআপ ফাংশনালিটি
+        function showPopup(title, message) {
+            document.getElementById('popupTitle').textContent = title;
+            document.getElementById('popupText').textContent = message;
+            document.getElementById('popupOverlay').classList.add('active');
+            
+            // পপআপ দেখানোর সময় স্পার্কল ইফেক্ট
+            for(let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    createSparkle(x, y);
+                }, i * 100);
             }
         }
         
-        // Audio functionality
-        const audioBtn = document.getElementById('audio-btn');
-        const audio = document.getElementById('eid-audio');
-        let audioPlaying = false;
+        function closePopup() {
+            document.getElementById('popupOverlay').classList.remove('active');
+        }
         
-        audioBtn.addEventListener('click', function() {
-            if (audioPlaying) {
-                audio.pause();
-                this.innerHTML = '<i class="fas fa-music"></i>';
-            } else {
-                audio.play();
-                this.innerHTML = '<i class="fas fa-pause"></i>';
+            
+            const memoryDescriptions = [
+                "এই হলো সেই বিশেষ দিনের গল্প যখন আমরা প্রথম একে অপরের চোখে চোখ রাখি। [বিস্তারিত বর্ণনা যোগ করুন]। মনে আছে কীভাবে তুমি [বিশেষ ঘটনা]? সেই মুহূর্তটি আমার হৃদয়ে চিরকাল জাগরুক থাকবে।",
+                "আমাদের প্রথম তারিখ ছিল এক অসাধারণ অভিজ্ঞতা। [স্থানের নাম]-এ আমরা কাটিয়েছিলাম অজস্র সুন্দর মুহূর্ত। তুমি পরেছিলে [বর্ণনা] যা আমার হৃদয় ছুঁয়ে গিয়েছিল। আমি এত紧张 ছিলাম যে [মজার ঘটনা]!",
+                "আমাদের প্রথম বার্ষিকী উদযাপন ছিল এক অনবদ্য অভিজ্ঞতা। [স্থানে] আমরা কাটিয়েছিলাম অজস্র সুন্দর মুহূর্ত। তুমি আমাকে দিয়েছিলে [উপহার] যা আমি আজও গভীরভাবে লালন করি। আমি [বর্ণনা] দিয়ে তোমাকে অবাক করার চেষ্টা করেছিলাম।",
+                "সেই বিশেষ রাতটি ছিল জাদুকরী। আমরা [বিশেষ ঘটনা] করেছিলাম যা আমাদের সম্পর্ককে আরও গভীর করে তুলেছিল। মনে আছে কীভাবে আমরা [মজার ঘটনা]? আর সেই [বিশেষ মুহূর্ত] তো ভুলবার নয়!",
+                "সেই দিনটি ছিল সম্পূর্ণ অপ্রত্যাশিত! তুমি আমাকে [বর্ণনা] দিয়ে অবাক করেছিলে। আমি কখনো ভাবিনি যে তুমি [বর্ণনা]! তোমার সেই সৃষ্টিশীলতা এবং ভালোবাসা আমাকে গভীরভাবে নাড়া দিয়েছিল।"
+            ];
+            
+            showPopup(memoryTitles[memoryId-1], memoryDescriptions[memoryId-1]);
+    
+        
+        // ওভারলে ক্লিক করলে পপআপ বন্ধ হবে
+        document.getElementById('popupOverlay').addEventListener('click', function(e) {
+            if(e.target === this) {
+                closePopup();
             }
-            audioPlaying = !audioPlaying;
         });
         
-        // Initial confetti
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                createConfetti();
-            }, 1000);
-            
-            // Add tap animation to envelope
-            const envelope = document.querySelector('.envelope');
-            envelope.style.transform = 'rotate(45deg) scale(0.8)';
-            setTimeout(() => {
-                envelope.style.transform = 'rotate(45deg) scale(1)';
-            }, 300);
+        // পেজের যেকোনো জায়গায় ক্লিক করলে স্পার্কল ইফেক্ট
+        document.addEventListener('click', function(e) {
+            if(!e.target.closest('.popup-content') && !e.target.closest('.heart-btn')) {
+                createSparkle(e.clientX, e.clientY);
+            }
         });
         
-        // Add tap effect to moon
-        const moon = document.querySelector('.moon');
-        moon.addEventListener('click', function() {
-            this.style.transform = 'scale(1.2)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 300);
-            createHearts();
-        });
-        
-        // Hide tap indicator after first interaction
-        document.addEventListener('click', function() {
-            document.querySelector('.tap-indicator').style.display = 'none';
-        }, { once: true });
-        
-        // Improved touch feedback for buttons
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.addEventListener('touchstart', function() {
-                this.style.transform = 'scale(0.95)';
-            });
-            
-            button.addEventListener('touchend', function() {
-                this.style.transform = 'scale(1)';
-            });
-        });
+        // মোবাইল ডিভাইসে টাচ ইভেন্ট হ্যান্ডলিং
+        document.addEventListener('touchstart', function(e) {
+            const touch = e.touches[0];
+            createSparkle(touch.clientX, touch.clientY);
+        }, {passive: true});
+
+
+
+        // Modal ওপেন করা
+function openModal() {
+    document.getElementById("loveStoryModal").style.display = "flex";
+}
+
+// Modal ক্লোজ করা
+function closeModal() {
+    document.getElementById("loveStoryModal").style.display = "none";
+}
+
+// যদি বাইরে ক্লিক করা হয়, তাহলে modal বন্ধ হবে
+window.onclick = function(event) {
+    let modal = document.getElementById("loveStoryModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+window.onload = function() {
+    document.getElementById('loadingScreen').style.display = 'none';
+};
+window.onload = function() {
+    setTimeout(function() {
+        document.getElementById('loadingScreen').style.display = 'none';
+    }, 10000); // Delay of 5000ms (5 seconds) before hiding the loading screen
+};
+
+
     </script>
+    
 </body>
 </html>
