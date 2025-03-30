@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eid-ul-Fitr Greeting</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Pacifico&display=swap');
+        
+        :root {
+            --primary-color: #2c786c;
+            --secondary-color: #004445;
+            --accent-color: #f8b400;
+            --text-color: #333;
+            --light-bg: #fff9e6;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Amiri', serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1519817650390-64a93db51149?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+            color: var(--text-color);
+            touch-action: manipulation;
+        }
+        
+        .card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 95%;
+            max-width: 550px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            z-index: 10;
+            transition: all 0.5s ease;
+            margin: 20px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .card {
+                padding: 40px;
+                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            }
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .moon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle at 30% 30%, #FFD700, #FFA500);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 40px #FFD700,
+                0 0 70px rgba(255, 215, 0, 0.4);
+            z-index: 1;
+            animation: glow 3s infinite alternate;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @media (min-width: 768px) {
+            .moon {
+                width: 100px;
+                height: 100px;
+                top: 20px;
+                right: 20px;
+                box-shadow: 
+                    0 0 60px #FFD700,
+                    0 0 100px rgba(255, 215, 0, 0.4);
+            }
+        }
+        
+        .moon::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 15px;
+            height: 15px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            box-shadow: 
+                20px 5px 0 0 rgba(0, 0, 0, 0.2),
+                40px -5px 0 0 rgba(0, 0, 0, 0.1),
+                -5px 25px 0 0 rgba(0, 0, 0, 0.15);
+        }
+        
+        @media (min-width: 768px) {
+            .moon::before {
+                top: 15px;
+                left: 15px;
+                width: 20px;
+                height: 20px;
+                box-shadow: 
+                    30px 10px 0 0 rgba(0, 0, 0, 0.2),
+                    60px -10px 0 0 rgba(0, 0, 0, 0.1),
+                    -10px 40px 0 0 rgba(0, 0, 0, 0.15);
+            }
+        }
+        
+        @keyframes glow {
+            0% { 
+                box-shadow: 0 0 30px #FFD700, 0 0 50px rgba(255, 215, 0, 0.4);
+                transform: scale(1);
+            }
+            100% { 
+                box-shadow: 0 0 60px #FFD700, 0 0 90px rgba(255, 215, 0, 0.6);
+                transform: scale(1.05);
+            }
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-top: 15px;
+            font-size: 2.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.8rem;
+                margin-top: 20px;
+            }
+        }
+        
+        .arabic {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin: 10px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 768px) {
+            .arabic {
+                font-size: 2.5rem;
+                margin: 15px 0;
+            }
+        }
+        
+        p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @media (min-width: 768px) {
+            p {
+                line-height: 1.8;
+                margin: 25px 0;
+                font-size: 1.3rem;
+            }
+        }
+        
+        .signature {
+            font-family: 'Pacifico', cursive;
+            color: var(--secondary-color);
+            margin-top: 30px;
+            font-size: 1.3rem;
+            position: relative;
+        }
+        
+        @media (min-width: 768px) {
+            .signature {
+                margin-top: 40px;
+                font-size: 1.5rem;
+            }
+        }
+        
+        .signature::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+        
+        @media (min-width: 768px) {
+            .signature::before {
+                width: 100px;
+            }
+        }
+        
+        .eid-decoration {
+            width: 100px;
+            margin: 15px auto;
+            animation: swing 3s infinite alternate, float 6s infinite ease-in-out;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2));
+        }
+        
+        @media (min-width: 768px) {
+            .eid-decoration {
+                width: 150px;
+                margin: 20px auto;
+            }
+        }
+        
+        @keyframes swing {
+            0% { transform: rotate(-10deg); }
+            100% { transform: rotate(10deg); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: #FFD700;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+        
+        @media (min-width: 768px) {
+            .star {
+                width: 5px;
+                height: 5px;
+            }
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.3); }
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 25px;
+            transition: all 0.4s ease;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(44, 120, 108, 0.5);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 768px) {
+            .btn {
+                padding: 15px 35px;
+                font-size: 1.2rem;
+                margin-top: 30px;
+                box-shadow: 0 8px 25px rgba(44, 120, 108, 0.5);
+            }
+        }
+        
+        .btn:hover {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(44, 120, 108, 0.7);
+        }
+        
+        .btn:active {
+            transform: translateY(1px);
+        }
+        
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .mosque {
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><path d="M0,20 L10,10 L20,20 L30,10 L40,20 L50,10 L60,20 L70,10 L80,20 L90,10 L100,20 Z" fill="%23004445"/></svg>') repeat-x;
+            background-size: contain;
+            opacity: 0.15;
+            z-index: 1;
+        }
+        
+        @media (min-width: 768px) {
+            .mosque {
+                bottom: -20px;
+                height: 120px;
+            }
+        }
+        
+        .floating-text {
+            position: absolute;
+            font-size: 1.2rem;
+            color: rgba(44, 120, 108, 0.4);
+            font-weight: bold;
+            animation: floatText 20s infinite linear;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .floating-text {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @keyframes floatText {
+            0% { transform: translateY(0) rotate(0deg) scale(0.5); opacity: 0; left: 10%; }
+            10% { opacity: 0.5; transform: scale(1); }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-800px) rotate(360deg) scale(0.5); opacity: 0; left: 90%; }
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 95%;
+            text-align: center;
+            position: relative;
+            animation: modalAppear 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            border: 2px solid var(--accent-color);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .modal-content {
+                padding: 40px;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            }
+        }
+        
+        @keyframes modalAppear {
+            0% { transform: scale(0.5) rotate(-5deg); opacity: 0; }
+            100% { transform: scale(1) rotate(0); opacity: 1; }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+            transition: all 0.3s;
+            z-index: 101;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+        
+        @media (min-width: 768px) {
+            .close-modal {
+                top: 15px;
+                right: 20px;
+                font-size: 1.8rem;
+            }
+        }
+        
+        .close-modal:hover {
+            color: var(--primary-color);
+            transform: rotate(90deg);
+        }
+        
+        .modal h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        @media (min-width: 768px) {
+            .modal h2 {
+                font-size: 2.2rem;
+                margin-bottom: 25px;
+            }
+        }
+        
+        .modal p {
+            color: var(--text-color);
+            font-size: 1rem;
+            margin: 15px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .modal p {
+                font-size: 1.2rem;
+                margin: 20px 0;
+            }
+        }
+        
+        .modal-img {
+            width: 80px;
+            margin: 15px auto;
+            animation: pulse 2s infinite;
+        }
+        
+        @media (min-width: 768px) {
+            .modal-img {
+                width: 120px;
+                margin: 20px auto;
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .fireworks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 5;
+        }
+        
+        .envelope {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 70px;
+            height: 70px;
+            background-color: var(--accent-color);
+            transform: rotate(45deg);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+        }
+        
+        @media (min-width: 768px) {
+            .envelope {
+                top: -20px;
+                right: -20px;
+                width: 100px;
+                height: 100px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            }
+        }
+        
+        .envelope i {
+            transform: rotate(-45deg);
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .envelope i {
+                font-size: 2rem;
+            }
+        }
+        
+        .special-letter {
+            display: none;
+            background-color: var(--light-bg);
+            border-left: 5px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+            position: relative;
+            border-radius: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .special-letter {
+                padding: 20px;
+                margin: 30px 0;
+            }
+        }
+        
+        .special-letter::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(to right, var(--accent-color), transparent);
+        }
+        
+        @media (min-width: 768px) {
+            .special-letter::before {
+                height: 15px;
+            }
+        }
+        
+        .special-letter h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        
+        .special-letter-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        @media (min-width: 768px) {
+            .special-letter-btn {
+                padding: 10px 20px;
+                margin-top: 20px;
+                font-size: 1rem;
+            }
+        }
+        
+        .special-letter-btn:hover {
+            background: #e0a800;
+            transform: translateY(-2px);
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            z-index: 100;
+            animation: confettiFall 5s linear forwards;
+        }
+        
+        @keyframes confettiFall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 1; }
+        }
+        
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            animation: floatUp 4s linear forwards;
+            color: #ff6b6b;
+            font-size: 1.2rem;
+            z-index: 20;
+        }
+        
+        @media (min-width: 768px) {
+            .heart {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+        
+        /* New additions for better mobile experience */
+        .tap-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            animation: pulse 2s infinite;
+            z-index: 100;
+            display: none;
+        }
+        
+        @media (max-width: 767px) {
+            .tap-indicator {
+                display: block;
+            }
+        }
+        
+        /* Improved touch targets */
+        button, .btn {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        
+        /* Prevent text selection on tap */
+        .no-select {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Swipe-up animation for mobile */
+        @keyframes swipeUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        .card {
+            animation: swipeUp 0.8s ease-out;
+        }
+        
+        /* Improved fireworks for mobile */
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: explode 0.8s ease-out forwards;
+        }
+        
+        /* Audio button */
+        .audio-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="no-select">
+    <div class="card">
+        <div class="moon"></div>
+        <div class="stars" id="stars"></div>
+        <div class="mosque"></div>
+        <div class="envelope">
+            <i class="fas fa-envelope"></i>
+        </div>
+        
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50,10 L60,40 L90,40 L65,60 L75,90 L50,75 L25,90 L35,60 L10,40 L40,40 Z' fill='%23f8b400'/></svg>" alt="Eid Lantern" class="eid-decoration">
+        <div class="arabic">عيد مبارك</div>
+        <h1>Eid-ul-Fitr Mubarak!</h1>
+
+        <h2>Jaan pakhita amr </h2>
+   
+        
+        <p>As the crescent moon is sighted and the holy month of Ramadan comes to an end, may Allah shower His blessings upon you and your family.</p>
+        
+        <p>May this Eid bring joy, peace, and prosperity to your life. May all your prayers be answered and your sacrifices appreciated.</p>
+        <p>May this Eid-ul-Fitr bring you endless happiness, peace, and prosperity. Wishing you and your family a blessed Eid filled with love and joy!</p>
+        
+        <div id="special-letter" class="special-letter">
+            <h3>Special Message for You</h3>
+            <p>My dearest, on this blessed occasion of Eid, I want you to know how much you mean to me. You're the light of my life, the joy in my heart, and the peace in my soul.</p>
+            <p>May Allah bless our bond and keep us connected through all the Eids to come. Even when we're apart, know that you're always in my thoughts and prayers.</p>
+            <p>With all my love and warmest Eid wishes...</p>
+        </div>
+        
+        <button id="show-letter-btn" class="special-letter-btn">Read Special Letter</button>
+        
+        <p class="signature">With warmest wishes,<br>Rabeya begam</p>
+        
+        <button id="wish-btn" class="btn">
+            <i class="fas fa-gift"></i> Click for Special Eid Wish
+        </button>
+        
+        <div class="audio-btn" id="audio-btn">
+            <i class="fas fa-music"></i>
+        </div>
+    </div>
+    
+    <div id="floating-texts"></div>
+    <div id="fireworks"></div>
+    
+    <div class="tap-indicator">Tap on elements to discover surprises!</div>
+    
+    <!-- Modal Popup -->
+    <div id="eid-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50,10 L60,40 L90,40 L65,60 L75,90 L50,75 L25,90 L35,60 L10,40 L40,40 Z' fill='%23f8b400'/></svg>" alt="Eid Lantern" class="modal-img">
+            <h2>Eid-ul-Fitr Mubarak!</h2>
+            <p>Eid Mubarak, jaan pakhita amr.. ❤️✨</p>
+            <p>Amar jiboner shobcheye special manush tumi, ar ei shubho dine tomar shathe thakte na parleo, amar mon shobshomoy tomar kachhei ache. 🥰 Allah tomake shukh, shanti ar bhalobashay voriye rakuk. Ei Eid tumi onek enjoy koro, onek moja koro, ar shudhu hasi-hasi thako! 🌙💖</p>
+            <p>Bhalobasha rilo onekkk! 😘❤️</p>
+            <p>From the bottom of my heart, I wish you happiness, peace, and prosperity.</p>
+            <p class="signature">Eid Mubarak!<br> Arpa ji ...</p>
+            <button id="send-hearts-btn" class="btn" style="margin-top: 20px;">
+                <i class="fas fa-heart"></i> Send Hearts
+            </button>
+        </div>
+    </div>
+
+    <audio id="eid-audio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Create stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            star.style.width = `${Math.random() * 4 + 2}px`;
+            star.style.height = star.style.width;
+            starsContainer.appendChild(star);
+        }
+        
+        // Create floating Eid texts
+        const floatingTexts = document.getElementById('floating-texts');
+        const eidTexts = ["Eid Mubarak", "عيد مبارك", "Blessed Eid", "Happy Eid", "Eid Greetings", "Selamat Hari Raya", "Eid Sa'id"];
+        
+        function createFloatingText() {
+            const text = document.createElement('div');
+            text.classList.add('floating-text');
+            text.textContent = eidTexts[Math.floor(Math.random() * eidTexts.length)];
+            text.style.left = `${Math.random() * 100}%`;
+            text.style.fontSize = `${Math.random() * 20 + 10}px`;
+            text.style.animationDuration = `${Math.random() * 15 + 10}s`;
+            text.style.color = `hsl(${Math.random() * 60 + 30}, 70%, 60%)`;
+            floatingTexts.appendChild(text);
+            
+            setTimeout(() => {
+                text.remove();
+            }, 20000);
+        }
+        
+        setInterval(createFloatingText, 1000);
+        
+        // Modal functionality
+        const modal = document.getElementById('eid-modal');
+        const btn = document.getElementById('wish-btn');
+        const closeBtn = document.querySelector('.close-modal');
+        
+        // Special letter button
+        document.getElementById('show-letter-btn').addEventListener('click', function() {
+            const letter = document.getElementById('special-letter');
+            if (letter.style.display === 'block') {
+                letter.style.display = 'none';
+                this.textContent = 'Read Special Letter';
+            } else {
+                letter.style.display = 'block';
+                this.textContent = 'Hide Letter';
+                createHearts();
+                createConfetti();
+            }
+        });
+        
+        // Main wish button
+        btn.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            createFireworks();
+            createConfetti();
+        });
+        
+        // Close modal when clicking X button
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Send hearts button
+        document.getElementById('send-hearts-btn').addEventListener('click', function() {
+            createHearts();
+            createConfetti();
+        });
+        
+        // Fireworks effect
+        function createFireworks() {
+            const fireworksContainer = document.getElementById('fireworks');
+            fireworksContainer.innerHTML = '';
+            
+            const fireworksCount = window.innerWidth < 768 ? 30 : 50;
+            
+            for (let i = 0; i < fireworksCount; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.classList.add('firework');
+                    firework.style.left = `${Math.random() * 100}%`;
+                    firework.style.top = `${Math.random() * 100}%`;
+                    firework.style.width = `${Math.random() * 10 + 3}px`;
+                    firework.style.height = firework.style.width;
+                    firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                    firework.style.borderRadius = '50%';
+                    firework.style.position = 'absolute';
+                    firework.style.boxShadow = `0 0 ${Math.random() * 10 + 3}px ${Math.random() * 5 + 1}px gold`;
+                    firework.style.animation = `explode ${Math.random() * 0.6 + 0.3}s ease-out forwards`;
+                    
+                    fireworksContainer.appendChild(firework);
+                    
+                    setTimeout(() => {
+                        firework.remove();
+                    }, 800);
+                }, i * 100);
+            }
+            
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes explode {
+                    0% { transform: scale(1); opacity: 1; }
+                    100% { transform: scale(${Math.random() * 10 + 3}); opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        // Confetti effect
+        function createConfetti() {
+            const confettiCount = window.innerWidth < 768 ? 50 : 100;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                    confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                    confetti.style.width = `${Math.random() * 8 + 4}px`;
+                    confetti.style.height = `${Math.random() * 8 + 4}px`;
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }, i * 50);
+            }
+        }
+        
+        // Hearts effect
+        function createHearts() {
+            const heartCount = window.innerWidth < 768 ? 10 : 20;
+            
+            for (let i = 0; i < heartCount; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+                    heart.innerHTML = '<i class="fas fa-heart"></i>';
+                    heart.style.left = `${Math.random() * 100}%`;
+                    heart.style.bottom = '0';
+                    heart.style.animationDuration = `${Math.random() * 2 + 2}s`;
+                    heart.style.color = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 4000);
+                }, i * 200);
+            }
+        }
+        
+        // Audio functionality
+        const audioBtn = document.getElementById('audio-btn');
+        const audio = document.getElementById('eid-audio');
+        let audioPlaying = false;
+        
+        audioBtn.addEventListener('click', function() {
+            if (audioPlaying) {
+                audio.pause();
+                this.innerHTML = '<i class="fas fa-music"></i>';
+            } else {
+                audio.play();
+                this.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            audioPlaying = !audioPlaying;
+        });
+        
+        // Initial confetti
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                createConfetti();
+            }, 1000);
+            
+            // Add tap animation to envelope
+            const envelope = document.querySelector('.envelope');
+            envelope.style.transform = 'rotate(45deg) scale(0.8)';
+            setTimeout(() => {
+                envelope.style.transform = 'rotate(45deg) scale(1)';
+            }, 300);
+        });
+        
+        // Add tap effect to moon
+        const moon = document.querySelector('.moon');
+        moon.addEventListener('click', function() {
+            this.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 300);
+            createHearts();
+        });
+        
+        // Hide tap indicator after first interaction
+        document.addEventListener('click', function() {
+            document.querySelector('.tap-indicator').style.display = 'none';
+        }, { once: true });
+        
+        // Improved touch feedback for buttons
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.95)';
+            });
+            
+            button.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
