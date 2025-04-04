@@ -1,627 +1,1884 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <title>Fuad Bin Latif | Portfolio  </title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Birthday Wishes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ========== BASE VARIABLES ========== */
+        :root {
+            /* Color Palette */
+            --primary: #ff6b6b;
+            --primary-light: #ff8e8e;
+            --primary-dark: #ff5252;
+            --secondary: #6b5b95;
+            --secondary-light: #8e7dbe;
+            --accent: #ffb3b3;
+            --accent-dark: #ff9999;
+            --gold: #ffd700;
+            --silver: #c0c0c0;
+            --text: #333333;
+            --text-light: #555555;
+            --light: #fff9f9;
+            --light-gray: #f8f9fa;
+            --white: #ffffff;
+            --black: #000000;
+            
+            /* Effects */
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+            --transition-slow: all 0.6s ease;
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            
+            /* Typography */
+            --font-heading: 'Dancing Script', cursive;
+            --font-subheading: 'Pacifico', cursive;
+            --font-body: 'Poppins', sans-serif;
+            --font-special: 'Montserrat', sans-serif;
+        }
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+        /* ========== BASE STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, #fff5f5 0%, #ffecec 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        /* ========== BACKGROUND ELEMENTS ========== */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+        .floating-heart {
+            position: absolute;
+            opacity: 0;
+            animation: float 15s linear infinite;
+            font-size: 1.5rem;
+            color: var(--primary);
+            z-index: 1;
+        }
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
+        .floating-balloon {
+            position: absolute;
+            opacity: 0;
+            animation: floatBalloon 20s linear infinite;
+            z-index: 2;
+            width: 60px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 8px;
+            box-shadow: inset -8px -8px 8px rgba(0, 0, 0, 0.1);
+        }
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+        .floating-gift {
+            position: absolute;
+            opacity: 0;
+            animation: floatGift 25s linear infinite;
+            z-index: 2;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+        }
 
+        .balloon-string {
+            position: absolute;
+            bottom: -25px;
+            width: 2px;
+            height: 25px;
+            background-color: var(--text-light);
+        }
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="text-primary fw-bold m-0">Fuad</h1>
-        </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0">
-          
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#skill" class="nav-item nav-link">Skills</a>
-                <a href="#service" class="nav-item nav-link">Services</a>
-            </div>
-        
-            <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
-                <h1 class="text-primary fw-bold m-0">Home</h1>
-            </a>
-           
-            <div class="navbar-nav me-auto py-0">
-                <a href="#project" class="nav-item nav-link">Projects</a>
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
 
-                <a href="#contact" class="nav-item nav-link">Contact</a>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+        @keyframes floatBalloon {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(50vh) translateX(20px) rotate(5deg);
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+        }
 
+        @keyframes floatGift {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.9;
+            }
+            50% {
+                transform: translateY(50vh) translateX(30px) rotate(180deg);
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-10vh) translateX(0) rotate(360deg);
+                opacity: 0;
+            }
+        }
 
-    <!-- Header Start -->
-    <div class="container-fluid bg-light my-6 mt-0" id="home">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 py-6 pb-0 pt-lg-0">
-                    <h3 class="text-primary mb-3">I'm</h3>
-                    <h1 class="display-3 mb-3">Fuad Bin Latif </h1>
-                    <h2 class="typed-text-output d-inline"></h2>
-                    <div class="typed-text d-none">Full-Stack Web Developer , Software Developer </div>
-                    <div class="d-flex align-items-center pt-5">
-                        <a href="my_Resume.pdf" class="btn btn-primary py-3 px-4 me-5">Download CV</a>
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
-                            <span></span>
-                        </button>
-                        <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
-                    </div>
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 10;
+        }
 
-                </div>
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 5;
+        }
 
-                <div class="col-lg-6">
-                    <img class="img-fluid" src="fuad.jpg" alt="">
-                </div>
+        /* ========== MAIN CONTAINER ========== */
+        .main-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 1rem;
+            position: relative;
+            z-index: 1;
+        }
 
-            </div>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/fuad-hasan-rabby04/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://github.com/thatsfuad"><i class="fab fa-github"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://x.com/FuadHassanRabby"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                       
-                    </div>
-        </div>
-    </div>
-    <!-- Header End -->
+        /* ========== HEADER SECTION ========== */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding: 2rem 0;
+            overflow: hidden;
+        }
 
+        .header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
 
-    <!-- Video Modal Start -->
-    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                            allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-    <h4 class="handwritten" style="font-family: 'Pacifico', cursive; font-size: 48px; color: #007bff; margin: 0; text-align: center;">
-        Welcome to My Portfolio
-    </h4><br>
+        .header h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
-    <!-- Video Modal End -->
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
 
-<br> <br> <br> <br> <br>
-    <!-- About Start -->
-    <h3 class="mb-4 text-center" style="font-size: 36px; text-transform: uppercase;">About</h3>
-    <hr style="width: 50%; border: 1px solid #007bff; margin: 10px auto;">
- 
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease;
+            font-weight: 300;
+        }
+
+        .birthday-person {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            font-family: var(--font-subheading);
+            margin: 1.5rem 0;
+            animation: pulse 2s infinite;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(45deg, var(--secondary), var(--secondary-light), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* ========== WISH CONTAINER ========== */
+        .wish-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* ========== WISH SECTION ========== */
+        .wish-section {
+            background-color: var(--white);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .wish-section:hover {
+            transform: translateY(-5px) rotateX(1deg) rotateY(1deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .wish-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        /* ========== WISH HEADER ========== */
+        .wish-header {
+            padding: 1.5rem;
+            background-color: var(--light);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .wish-header::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+        }
+
+        .wish-title {
+            font-family: var(--font-subheading);
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        .wish-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+
+        /* ========== WISH CONTENT ========== */
+        .wish-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+        }
+
+        .wish-message {
+            font-family: var(--font-body);
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 2rem;
+            position: relative;
+            padding: 1.5rem;
+        }
+
+        .wish-message::before,
+        .wish-message::after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            font-family: var(--font-heading);
+        }
+
+        .wish-message::before {
+            top: -1rem;
+            left: -0.5rem;
+        }
+
+        .wish-message::after {
+            bottom: -2.5rem;
+            right: -0.5rem;
+        }
+
+        /* ========== SPECIAL WISH SECTION ========== */
+        #special-wish {
+            background: linear-gradient(135deg, #ffcce6 0%, #ffb3d9 100%);
+            overflow: hidden;
+        }
+
+        #special-wish .wish-header {
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .special-content {
+            text-align: center;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .special-message {
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 2rem;
+            line-height: 1.6;
+            color: #800040;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: var(--border-radius-lg);
+            backdrop-filter: blur(5px);
+            box-shadow: var(--shadow);
+            transform-style: preserve-3d;
+            transition: var(--transition);
+        }
+
+        .special-message:hover {
+            transform: rotateY(5deg) rotateX(5deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .special-message span {
+            display: inline-block;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .special-message span:hover {
+            transform: translateY(-5px) rotate(3deg) scale(1.1);
+            color: #ff0066;
+            z-index: 2;
+            text-shadow: 0 0 5px rgba(255, 0, 102, 0.3);
+        }
+
+        .special-signature {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-top: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-dark), var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .heart-decoration {
+            position: absolute;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            animation: heartFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes heartFloat {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        .heart-decoration:nth-child(1) {
+            top: 10%;
+            left: 10%;
+        }
+
+        .heart-decoration:nth-child(2) {
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 0.5s;
+        }
+
+        /* ========== PHOTO GALLERY ========== */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition-slow);
+            aspect-ratio: 1/1;
+            cursor: pointer;
+            transform-style: preserve-3d;
+        }
+
+        .photo-item:hover {
+            transform: translateY(-8px) scale(1.05) rotateY(5deg);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+            z-index: 2;
+        }
+
+        .photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .photo-item:hover .photo-img {
+            transform: scale(1.1);
+        }
+
+        .photo-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: var(--transition-slow);
+            opacity: 0;
+            font-family: var(--font-special);
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        .photo-item:hover .photo-caption {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ========== WISH BUTTONS ========== */
+        .wish-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+
+        .wish-btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 1.2rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 110px;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .wish-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 45%,
+                rgba(255, 255, 255, 0.5) 48%,
+                rgba(255, 255, 255, 0.8) 50%,
+                rgba(255, 255, 255, 0.5) 52%,
+                rgba(255, 255, 255, 0) 57%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: translateY(100%) rotate(30deg);
+            transition: var(--transition-slow);
+        }
+
+        .wish-btn:hover {
+            transform: translateY(-5px) rotateX(5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .wish-btn:hover::before {
+            transform: translateY(-50%) rotate(30deg);
+        }
+
+        .wish-btn i {
+            font-size: 2.2rem;
+            margin-bottom: 0.6rem;
+            transition: var(--transition);
+        }
+
+        .wish-btn:hover i {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .wish-btn-text {
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .wish-btn:hover .wish-btn-text {
+            transform: scale(1.05);
+        }
+
+        /* ========== COUNTDOWN SECTION ========== */
+        .countdown-section {
+            background: linear-gradient(135deg, #6b5b95 0%, #8e7dbe 100%);
+            color: white;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .countdown-box {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            min-width: 80px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            font-family: var(--font-special);
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ========== POPUP WISH MODAL ========== */
+        .wish-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-slow);
+            backdrop-filter: blur(5px);
+        }
+
+        .wish-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .wish-modal-content {
+            background-color: var(--white);
+            border-radius: var(--border-radius-xl);
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.8);
+            transition: var(--transition-slow);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            animation: modalShake 0.5s ease;
+        }
+
+        @keyframes modalShake {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            20% { transform: translateX(-5px) rotate(-2deg); }
+            40% { transform: translateX(5px) rotate(2deg); }
+            60% { transform: translateX(-5px) rotate(-1deg); }
+            80% { transform: translateX(5px) rotate(1deg); }
+        }
+
+        .wish-modal-overlay.active .wish-modal-content {
+            transform: scale(1);
+        }
+
+        .wish-modal-header {
+            padding: 1.5rem;
+            background-color: var(--light);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .wish-modal-title {
+            font-family: var(--font-subheading);
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .close-wish-modal {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-wish-modal:hover {
+            background-color: var(--light);
+            color: var(--primary);
+            transform: rotate(180deg);
+        }
+
+        .wish-modal-body {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .wish-modal-icon {
+            font-size: 4.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            animation: bounce 2s infinite;
+            display: inline-block;
+        }
+
+        .wish-modal-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+        }
+
+        .wish-modal-signature {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary);
+            margin-top: 1.5rem;
+        }
+
+        /* ========== FIREWORKS EFFECT ========== */
+        .fireworks-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 20;
+            overflow: hidden;
+        }
+
+        /* ========== FOOTER SECTION ========== */
+        .footer {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: var(--light);
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-message {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-quote {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-quote::before,
+        .footer-quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            font-family: var(--font-heading);
+        }
+
+        .footer-quote::before {
+            top: -0.8rem;
+            left: -1.5rem;
+        }
+
+        .footer-quote::after {
+            bottom: -1.5rem;
+            right: -1.5rem;
+        }
+
+        .footer-btn {
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-btn i {
+            transition: var(--transition);
+        }
+
+        .footer-btn:hover i {
+            transform: rotate(360deg);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 2rem;
+        }
+
+        .footer-hearts {
+            position: absolute;
+            font-size: 8rem;
+            color: rgba(255, 107, 107, 0.1);
+            z-index: 0;
+            animation: heartFloat 10s ease-in-out infinite;
+        }
+
+        .footer-hearts:nth-child(1) {
+            top: 20%;
+            left: 10%;
+        }
+
+        .footer-hearts:nth-child(2) {
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 0.5s;
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-7px); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fireworks {
+            0% { 
+                transform: translate(var(--x), var(--y)) scale(0);
+                opacity: 1;
+            }
+            100% { 
+                transform: translate(var(--x-end), var(--y-end)) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .birthday-person {
+                font-size: 2rem;
+            }
+            
+            .special-message {
+                font-size: 1.6rem;
+                padding: 1.5rem;
+            }
+            
+            .special-signature {
+                font-size: 2.2rem;
+            }
+            
+            .wish-title {
+                font-size: 1.8rem;
+            }
+            
+            .wish-message {
+                font-size: 1.1rem;
+            }
+            
+            .wish-buttons {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            
+            .wish-btn {
+                min-height: 100px;
+                padding: 1rem;
+            }
+            
+            .wish-btn i {
+                font-size: 2rem;
+            }
+            
+            .wish-btn-text {
+                font-size: 0.9rem;
+            }
+            
+            .countdown-box {
+                min-width: 70px;
+                padding: 0.8rem;
+            }
+            
+            .countdown-value {
+                font-size: 2rem;
+            }
+            
+            .footer-message {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2.3rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .birthday-person {
+                font-size: 1.8rem;
+            }
+            
+            .special-message {
+                font-size: 1.4rem;
+                padding: 1rem;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                gap: 1rem;
+            }
+            
+            .wish-buttons {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .countdown-container {
+                flex-wrap: wrap;
+            }
+            
+            .countdown-box {
+                min-width: 60px;
+                padding: 0.6rem;
+            }
+            
+            .countdown-value {
+                font-size: 1.8rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.8rem;
+            }
+            
+            .wish-modal-content {
+                width: 95%;
+            }
+            
+            .wish-modal-icon {
+                font-size: 3.5rem;
+            }
+            
+            .wish-modal-text {
+                font-size: 1.1rem;
+            }
+            
+            .wish-modal-signature {
+                font-size: 1.8rem;
+            }
+            
+            .footer-message {
+                font-size: 1.8rem;
+            }
+            
+            .footer-quote {
+                font-size: 1rem;
+            }
+        }
+
+        /* Add this new style for the countdown button */
+        .start-countdown-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
+            margin-top: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .start-countdown-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+        }
+
+        .start-countdown-btn i {
+            transition: var(--transition);
+        }
+
+        .start-countdown-btn:hover i {
+            transform: rotate(360deg);
+        }
+
+        .countdown-complete {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin: 1.5rem 0;
+            text-align: center;
+            animation: heartBeat 1.5s infinite;
+        }
+
+        /* Update the countdown section styles */
+        .countdown-section .wish-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .countdown-instruction {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
     
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
 
-    <div class="container-xxl py-6" id="about">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center mb-5">
-                        <div class="years flex-shrink-0 text-center me-4">
-                           
-                        </div>
-                        <h3 class="lh-base mb-0">Full stack web developer </h3>
-                    </div>
-                    <p class="mb-4">Hello! I’m Fuad, a passionate full stack web developer with a strong foundation in both frontend and backend technologies. With a year of hands-on experience, I specialize in creating dynamic and user-friendly web applications using Django, a powerful framework that allows me to build robust backend solutions.
+    <!-- Fireworks Container -->
+    <div class="fireworks-container" id="fireworksContainer"></div>
 
-                        My journey in software development has equipped me with a diverse skill set, enabling me to tackle various challenges and deliver high-quality solutions. I thrive on transforming ideas into functional applications, ensuring that each project not only meets the client's needs but also offers an exceptional user experience.
-                        
-                        Whether it's developing RESTful APIs, designing responsive user interfaces, or implementing database solutions, I take pride in my work and strive for excellence in every aspect of the development process. I'm constantly learning and adapting to new technologies, which allows me to stay ahead in this ever-evolving field.</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Afordable Prices</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>High Quality Product</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>On Time Project Delivery</p>
-                  
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="animate__animated animate__fadeInDown">Happy Birthday!</h1>
+            <div class="birthday-person animate__animated animate__pulse animate__infinite">Dear [Name]</div>
+            <p class="animate__animated animate__fadeIn">Wishing you a day as wonderful as you are!</p>
+        </header>
+
+        <!-- Wish Container -->
+        <div class="wish-container">
+            <!-- Special Wish Section -->
+            <section id="special-wish" class="wish-section">
+                <div class="wish-header">
+                    <h2 class="wish-title">My Heartfelt Wish</h2>
                 </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="row g-3 mb-4">
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/about-1.jpg" alt="">
+                <div class="wish-content">
+                    <div class="heart-decoration">❤️</div>
+                    <div class="heart-decoration">❤️</div>
+                    <div class="special-content">
+                        <div class="special-message">
+                            <span>On</span> <span>your</span> <span>special</span> <span>day,</span>
+                            <br>
+                            <span>I</span> <span>wish</span> <span>you</span> <span>laughter,</span>
+                            <br>
+                            <span>joy,</span> <span>and</span> <span>endless</span> <span>happiness!</span>
+                            <br><br>
+                            <span>May</span> <span>all</span> <span>your</span> <span>dreams</span>
+                            <br>
+                            <span>come</span> <span>true</span> <span>this</span> <span>year!</span>
                         </div>
-                        <div class="col-sm-6">
-                            <img class="img-fluid rounded" src="img/about-2.jpg" alt="">
-                        </div>
+                        <div class="special-signature">With Love</div>
                     </div>
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Happy Clients</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1234</h2>
-                    </div>
-                    <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam ipsum clita labore dolor duo clita.</p>
-                    <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Projects Completed</h5>
-                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1234</h2>
-                    </div>
-                    <p class="mb-0">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam ipsum clita labore dolor duo clita.</p>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
+            </section>
 
-
-    <!-- Expertise Start -->
-    <div class="container-xxl py-6 pb-5" id="skill">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">Skills & Experience</h1>
-                    <p class="mb-4" style="font-size: 18px;">
-                        <strong>Web Development:</strong>
-                        <ul>
-                            <li><strong>Full Stack Development:</strong>
-                                <ul>
-                                    <li><strong>Frontend Technologies:</strong> <strong>HTML, CSS, JavaScript, Bootstrap, React</strong> (or any other frameworks you use)</li>
-                                    <li><strong>Backend Technologies:</strong> <strong>Django, RESTful API development</strong></li>
-                                </ul>
-                            </li>
-                            <li><strong>Programming Languages:</strong>
-                                <ul>
-                                    <li><strong>Python</strong></li>
-                                    <li><strong>JavaScript</strong></li>
-                                    <li><strong>C++</strong></li>
-                                </ul>
-                            </li>
-                            <li><strong>Database Management:</strong>
-                                <ul>
-                                    <li><strong>PostgreSQL</strong></li>
-                                    <li><strong>MySQL</strong></li>
-                                    <li><strong>SQLite</strong></li>
-                                </ul>
-                            </li>
-                            <li><strong>Version Control:</strong>
-                                <ul>
-                                    <li><strong>Git and GitHub</strong></li>
-                                </ul>
-                            </li>
-                            <li><strong>Deployment:</strong>
-                                <ul>
-                                    <li><strong>Heroku</strong></li>
-                                    <li><strong>AWS</strong> (or any other hosting platforms you use)</li>
-                                </ul>
-                            </li>
-                            <li><strong>Tools & Technologies:</strong>
-                                <ul>
-                                    <li><strong>Visual Studio Code</strong></li>
-                                    <li><strong>Postman</strong> (for API testing)</li>
-                                    <li><strong>Docker</strong> (if applicable)</li>
-                                </ul>
-                            </li>
-                            <li><strong>Soft Skills:</strong>
-                                <ul>
-                                    <li><strong>Problem-Solving</strong></li>
-                                    <li><strong>Team Collaboration</strong></li>
-                                    <li><strong>Effective Communication</strong></li>
-                                    <li><strong>Time Management</strong></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </p>
+            <!-- Countdown Section -->
+            <section class="wish-section countdown-section">
+                <div class="wish-header">
+                    <h2 class="wish-title">Celebration Countdown</h2>
+                </div>
+                <div class="wish-content">
+                    <p class="countdown-instruction">Ready for the birthday surprise? Start the countdown!</p>
+                    <button class="start-countdown-btn" id="startCountdownBtn">
+                        <i class="fas fa-rocket"></i> Start Countdown
+                    </button>
+                    <div class="countdown-container" id="countdown" style="display: none;">
+                        <div class="countdown-box">
+                            <div class="countdown-value" id="days">00</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-value" id="hours">00</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-value" id="minutes">00</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-value" id="seconds">00</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                    <div id="countdownComplete" style="display: none;">
+                        <div class="countdown-complete">Happy Birthday! 🎉🎂</div>
+                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem;">
+                            Wishing you a day filled with happiness and joy!
+                        </p>
+                    </div>
+                </div>
+            </section>
         
-                    
-                    
-                    
-                    
+
+            <!-- Photo Gallery Section -->
+            <section class="wish-section">
+                <div class="wish-header">
+                    <h2 class="wish-title">Beautiful Memories</h2>
                 </div>
+                <div class="wish-content">
+                    <div class="photo-gallery">
+                        <div class="photo-item" data-modal="memory1Modal">
+                            <img src="https://i.imgur.com/JqYeYn0.jpg" alt="Happy Moment" class="photo-img">
+                            <div class="photo-caption">Happy Times Together</div>
+                        </div>
+                        <div class="photo-item" data-modal="memory2Modal">
+                            <img src="https://i.imgur.com/7V7DfHj.jpg" alt="Celebration" class="photo-img">
+                            <div class="photo-caption">Celebrating Life</div>
+                        </div>
+                        <div class="photo-item" data-modal="memory3Modal">
+                            <img src="https://i.imgur.com/5R5q7QK.jpg" alt="Adventure" class="photo-img">
+                            <div class="photo-caption">Our Adventures</div>
+                        </div>
+                        <div class="photo-item" data-modal="memory4Modal">
+                            <img src="https://i.imgur.com/8KQ3Y9f.jpg" alt="Smiling" class="photo-img">
+                            <div class="photo-caption">Your Beautiful Smile</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wish Buttons Section -->
+            <section class="wish-section">
+                <div class="wish-header">
+                    <h2 class="wish-title">More Birthday Wishes</h2>
+                </div>
+                <div class="wish-content">
+                    <div class="wish-buttons">
+                        <button class="wish-btn" data-wish="fun">
+                            <i class="fas fa-laugh-beam"></i>
+                            <span class="wish-btn-text">Fun Wish</span>
+                        </button>
+                        <button class="wish-btn" data-wish="sweet">
+                            <i class="fas fa-heart"></i>
+                            <span class="wish-btn-text">Sweet Wish</span>
+                        </button>
+                        <button class="wish-btn" data-wish="funny">
+                            <i class="fas fa-grin-squint-tears"></i>
+                            <span class="wish-btn-text">Funny Wish</span>
+                        </button>
+                        <button class="wish-btn" data-wish="inspirational">
+                            <i class="fas fa-star"></i>
+                            <span class="wish-btn-text">Inspirational</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-hearts">❤️</div>
+        <div class="footer-hearts">❤️</div>
+        <div class="footer-content">
+            <div class="footer-message">Have a Wonderful Birthday!</div>
+            <div class="footer-quote">
+                "Age is merely the number of years the world has been enjoying you!"
+            </div>
+            <button class="footer-btn" id="surpriseBtn">
+                <i class="fas fa-gift"></i> Click for Surprise!
+            </button>
+            <div class="copyright">© 2023 Birthday Wishes | Made with ❤️</div>
+        </div>
+    </footer>
+
+    <!-- Wish Modals -->
+    <div class="wish-modal-overlay" id="funWishModal">
+        <div class="wish-modal-content">
+            <div class="wish-modal-header">
+                <h3 class="wish-modal-title">Fun Birthday Wish</h3>
+                <button class="close-wish-modal">&times;</button>
+            </div>
+            <div class="wish-modal-body">
+                <div class="wish-modal-icon">🎉</div>
+                <div class="wish-modal-text">
+                    <p>Happy Birthday to someone who's smart, gorgeous, funny, and reminds me a lot of myself! 😉</p>
+                    <p>May your birthday be as fun as you are! Let's party like there's no tomorrow!</p>
+                </div>
+                <div class="wish-modal-signature">Cheers!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wish-modal-overlay" id="sweetWishModal">
+        <div class="wish-modal-content">
+            <div class="wish-modal-header">
+                <h3 class="wish-modal-title">Sweet Birthday Wish</h3>
+                <button class="close-wish-modal">&times;</button>
+            </div>
+            <div class="wish-modal-body">
+                <div class="wish-modal-icon">💖</div>
+                <div class="wish-modal-text">
+                    <p>On your birthday, I wish you all the happiness your heart can hold, all the success you deserve, and all the love you can imagine.</p>
+                    <p>You make the world a better place just by being in it. May your special day be as wonderful as you are!</p>
+                </div>
+                <div class="wish-modal-signature">With Love</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wish-modal-overlay" id="funnyWishModal">
+        <div class="wish-modal-content">
+            <div class="wish-modal-header">
+                <h3 class="wish-modal-title">Funny Birthday Wish</h3>
+                <button class="close-wish-modal">&times;</button>
+            </div>
+            <div class="wish-modal-body">
+                <div class="wish-modal-icon">😂</div>
+                <div class="wish-modal-text">
+                    <p>Happy Birthday! Remember, you're not getting older, you're just becoming a classic!</p>
+                    <p>At your age, you've still got it... it just takes a little longer to find it sometimes!</p>
+                </div>
+                <div class="wish-modal-signature">Your Funny Friend</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wish-modal-overlay" id="inspirationalWishModal">
+        <div class="wish-modal-content">
+            <div class="wish-modal-header">
+                <h3 class="wish-modal-title">Inspirational Birthday Wish</h3>
+                <button class="close-wish-modal">&times;</button>
+            </div>
+            <div class="wish-modal-body">
+                <div class="wish-modal-icon">🌟</div>
+                <div class="wish-modal-text">
+                    <p>Happy Birthday! May this year bring you closer to your dreams and fill your life with meaningful moments.</p>
+                    <p>You have so much wonderful potential, and I can't wait to see all the amazing things you'll accomplish this year!</p>
+                </div>
+                <div class="wish-modal-signature">Believe in You</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memory Modals -->
+    <div class="wish-modal-overlay" id="memory1Modal">
+        <div class="wish-modal-content">
+            <div class="wish-modal-header">
+                <h3 class="wish-modal-title">Happy Times Together</h3>
+                <button class="close-wish-modal">&times;</button>
+            </div>
+            <div class="wish-modal-body">
+                <img src="https://i.imgur.com/JqYeYn0.jpg" alt="Happy Moment" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div class="wish-modal-text">
+                    <p>Remember this wonderful moment we shared? It was one of those perfect days where everything just felt right.</p>
+                    <p>I cherish all our happy times together and look forward to creating many more beautiful memories with you!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wish-modal-overlay" id="memory2Modal">
+        <div class="wish-modal-content">
+            <div class="wish-modal-header">
+                <h3 class="wish-modal-title">Celebrating Life</h3>
+                <button class="close-wish-modal">&times;</button>
+            </div>
+            <div class="wish-modal-body">
+                <img src="https://i.imgur.com/7V7DfHj.jpg" alt="Celebration" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div class="wish-modal-text">
+                    <p>This photo captures your beautiful spirit so perfectly! You know how to celebrate life and make every moment special.</p>
+                    <p>May your birthday be filled with the same joy and excitement as this wonderful celebration!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wish-modal-overlay" id="memory3Modal">
+        <div class="wish-modal-content">
+            <div class="wish-modal-header">
+                <h3 class="wish-modal-title">Our Adventures</h3>
+                <button class="close-wish-modal">&times;</button>
+            </div>
+            <div class="wish-modal-body">
+                <img src="https://i.imgur.com/5R5q7QK.jpg" alt="Adventure" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div class="wish-modal-text">
+                    <p>What an amazing adventure this was! You always bring excitement and joy to every experience.</p>
+                    <p>May this new year of your life be filled with even more wonderful adventures and discoveries!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wish-modal-overlay" id="memory4Modal">
+        <div class="wish-modal-content">
+            <div class="wish-modal-header">
+                <h3 class="wish-modal-title">Your Beautiful Smile</h3>
+                <button class="close-wish-modal">&times;</button>
+            </div>
+            <div class="wish-modal-body">
+                <img src="https://i.imgur.com/8KQ3Y9f.jpg" alt="Smiling" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
+                <div class="wish-modal-text">
+                    <p>This is one of my favorite photos of you - that radiant smile that lights up any room!</p>
+                    <p>May your birthday be filled with countless reasons to smile just like this, and may your year ahead be as bright as your beautiful smile!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========== INITIALIZATION ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingElements();
+            setupWishButtons();
+            setupPhotoModals();
+            setupSparkleEffect();
+            animateSpecialMessage();
+            setupScrollAnimations();
+            setupCountdown();
+            setupSurpriseButton();
+            
+            // Show birthday animation on load
+            setTimeout(() => {
+                createConfetti(window.innerWidth/2, 100);
+                createFireworks(5);
+            }, 1000);
+        });
+
+        // ========== FLOATING ELEMENTS BACKGROUND ==========
+        function createFloatingElements() {
+            const container = document.getElementById('floatingElements');
+            const heartCount = 15;
+            const balloonCount = 8;
+            const giftCount = 5;
+            
+            // Create floating hearts
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.fontSize = (Math.random() * 15 + 8) + 'px';
+                container.appendChild(heart);
+            }
+            
+            // Create floating balloons
+            for (let i = 0; i < balloonCount; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'floating-balloon';
+                balloon.style.left = Math.random() * 100 + 'vw';
+                balloon.style.animationDuration = (Math.random() * 15 + 15) + 's';
+                balloon.style.animationDelay = Math.random() * 10 + 's';
+                balloon.style.backgroundColor = getRandomBalloonColor();
                 
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
-                        </li>
-                        <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div id="tab-1" class="tab-pane fade show p-0 active">
-
-                         <p>
-                            
-                            I am a passionate and dedicated Full Stack Web Developer and Software Developer with a year of experience in building dynamic and scalable web applications. I specialize in backend development using Django and have a strong understanding of frontend technologies like HTML, CSS, JavaScript, and Bootstrap. I am proficient in developing RESTful APIs and managing databases like PostgreSQL, MySQL, and SQLite.
-                            
-                            Throughout my journey, I have successfully completed four projects, honing my skills in both web development and software engineering. I enjoy solving complex problems and delivering high-quality software solutions tailored to the needs of clients. With a focus on clean code and efficiency, I strive to create user-friendly and reliable applications.
-                         </p>
-                        </div>
-                        <div id="tab-2" class="tab-pane fade show p-0">
-                              <p>I am Fuad, currently studying at Jhenaidah Cadet College and pursuing a career as a Full Stack Web Developer and Software Developer. I have recently completed comprehensive courses in Python, Django, Django Rest Framework, HTML, CSS, Bootstrap, JavaScript, and C. Additionally, I have gained expertise in PostgreSQL, MySQL, and SQLite database management systems.
-
-                                Currently, I am expanding my knowledge in C++, further strengthening my programming and problem-solving skills. With a well-rounded foundation in both backend and frontend technologies, I am committed to developing efficient, scalable, and user-friendly web applications.</p>
-                        </div>
-                    </div>
-                    <h3 class="mb-4 text-center" style="font-size: 36px;">My Skills</h3>
-<div class="row align-items-center">
-    <div class="col-md-6">
-        <div class="skill mb-4">
-            <div class="d-flex justify-content-between">
-                <h6 style="font-weight: 500;">HTML/CSS</h6>
-                <h6 style="font-weight: 500;">95%</h6>
-            </div>
-            <div class="progress">
-                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        <div class="skill mb-4">
-            <div class="d-flex justify-content-between">
-                <h6 style="font-weight: 500;">JavaScript</h6>
-                <h6 style="font-weight: 500;">85%</h6>
-            </div>
-            <div class="progress">
-                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        <div class="skill mb-4">
-            <div class="d-flex justify-content-between">
-                <h6 style="font-weight: 500;">PHP</h6>
-                <h6 style="font-weight: 500;">80%</h6>
-            </div>
-            <div class="progress">
-                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="skill mb-4">
-            <div class="d-flex justify-content-between">
-                <h6 style="font-weight: 500;">Python</h6>
-                <h6 style="font-weight: 500;">95%</h6>
-            </div>
-            <div class="progress">
-                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        <div class="skill mb-4">
-            <div class="d-flex justify-content-between">
-                <h6 style="font-weight: 500;">Django/RESTful API</h6>
-                <h6 style="font-weight: 500;">95%</h6>
-            </div>
-            <div class="progress">
-                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-        <div class="skill mb-4">
-            <div class="d-flex justify-content-between">
-                <h6 style="font-weight: 500;">C++</h6>
-                <h6 style="font-weight: 500;">80%</h6>
-            </div>
-            <div class="progress">
-                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-                </div>
+                const string = document.createElement('div');
+                string.className = 'balloon-string';
+                balloon.appendChild(string);
                 
-            </div>
-        </div>
-    </div>
-    <!-- Expertise End -->
+                container.appendChild(balloon);
+            }
+            
+            // Create floating gifts
+            for (let i = 0; i < giftCount; i++) {
+                const gift = document.createElement('div');
+                gift.className = 'floating-gift';
+                gift.innerHTML = '🎁';
+                gift.style.left = Math.random() * 100 + 'vw';
+                gift.style.animationDuration = (Math.random() * 20 + 20) + 's';
+                gift.style.animationDelay = Math.random() * 10 + 's';
+                gift.style.color = getRandomBalloonColor();
+                container.appendChild(gift);
+            }
+        }
+        
+        function getRandomBalloonColor() {
+            const colors = [
+                '#ff6b6b', '#6b5b95', '#ffb347', '#00b09b', 
+                '#ff8e8e', '#8e7dbe', '#ffcc33', '#96c93d'
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
 
+        // ========== WISH BUTTONS FUNCTIONALITY ==========
+        function setupWishButtons() {
+            const wishButtons = document.querySelectorAll('.wish-btn');
+            
+            wishButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const wishType = this.getAttribute('data-wish');
+                    const modal = document.getElementById(`${wishType}WishModal`);
+                    
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        createConfetti(window.innerWidth/2, window.innerHeight/2);
+                        createFireworks(3);
+                    }
+                });
+            });
+            
+            // Close buttons for all wish modals
+            const closeButtons = document.querySelectorAll('.close-wish-modal');
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const modal = this.closest('.wish-modal-overlay');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Close when clicking outside modal
+            const modals = document.querySelectorAll('.wish-modal-overlay');
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // Close with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modals.forEach(modal => {
+                        if (modal.classList.contains('active')) {
+                            modal.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                }
+            });
+        }
 
-    <!-- Service Start -->
-    <div class="container-fluid bg-light my-5 py-6" id="service">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Services</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="#contact">Hire Me</a>
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Front-end</h4>
-                           
-                            <span>As a front-end developer, I specialize in creating responsive, user-friendly interfaces using HTML, CSS, and JavaScript. I focus on delivering clean, efficient code to enhance user experience and ensure seamless interaction across different devices and browsers.</span>
-                        </div>
-                    </div>
+        // ========== PHOTO MODAL FUNCTIONALITY ==========
+        function setupPhotoModals() {
+            const photoItems = document.querySelectorAll('.photo-item');
+            
+            photoItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const modalId = this.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    
+                    if (modal) {
+                        modal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+        }
 
+        // ========== SPARKLE EFFECT ==========
+        function setupSparkleEffect() {
+            document.addEventListener('mousemove', function(e) {
+                if (Math.random() > 0.9) { // Only create sparkles occasionally
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = e.pageX + 'px';
+                    sparkle.style.top = e.pageY + 'px';
+                    sparkle.style.backgroundColor = `hsl(${Math.random() * 60 + 330}, 100%, 70%)`;
+                    
+                    document.body.appendChild(sparkle);
+                    
+                    // Animate sparkle
+                    const size = Math.random() * 8 + 3;
+                    const animation = [
+                        { transform: 'scale(0)', opacity: 0 },
+                        { transform: `scale(${size})`, opacity: 0.8 },
+                        { transform: 'scale(0)', opacity: 0 }
+                    ];
+                    
+                    const timing = {
+                        duration: 800,
+                        iterations: 1
+                    };
+                    
+                    sparkle.animate(animation, timing);
+                    
+                    // Remove sparkle after animation
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, timing.duration);
+                }
+            });
+        }
 
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-laptop-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Back-end</h4>
-                            
-                            <span>As a back-end developer, I design and implement server-side logic, databases, and APIs using technologies like Django and Python. I focus on optimizing performance, ensuring security, and integrating with front-end systems to create robust and scalable web applications.</span>
-                        </div>
-                    </div>
-             
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Full-stack developer</h4>
-                          
-                            <span>As a full-stack developer, I create dynamic web applications by combining front-end and back-end technologies. I specialize in building responsive interfaces, managing databases, and developing APIs, ensuring seamless user experiences and efficient data handling across platforms.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
-                        <div class="bg-icon flex-shrink-0 mb-3">
-                            <i class="fa fa-code-branch fa-2x text-dark"></i>
-                        </div>
-                        <div class="ms-sm-4">
-                            <h4 class="mb-3">Python and Django </h4>
-                      
-                            <span>As a Python and Django developer, I create scalable web applications leveraging the power of Python and the Django framework. I focus on building efficient APIs, managing databases, and ensuring secure, high-performance solutions tailored to user needs.</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
+        // ========== SPECIAL MESSAGE ANIMATION ==========
+        function animateSpecialMessage() {
+            const words = document.querySelectorAll('.special-message span');
+            
+            words.forEach((word, index) => {
+                // Staggered animation
+                word.style.animation = `floatUp 3s ease-in-out ${index * 0.1}s infinite`;
+                
+                // Random color change on hover
+                word.addEventListener('mouseover', () => {
+                    const colors = ['#ff0066', '#9900cc', '#ff6600', '#00cc99'];
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    word.style.color = randomColor;
+                    word.style.textShadow = `0 0 5px ${randomColor}`;
+                });
+                
+                word.addEventListener('mouseout', () => {
+                    word.style.color = '';
+                    word.style.textShadow = '';
+                });
+            });
+        }
 
+        // ========== SCROLL ANIMATIONS ==========
+        function setupScrollAnimations() {
+            const animateElements = document.querySelectorAll('.wish-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animateElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        }
 
-    <!-- Projects Start -->
-    <div class="container-xxl py-6 pt-5" id="project">
-        <div class="container">
-            <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Projects</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-                        <li class="mx-3 active" data-filter="*">All Projects</li>
-                        <li class="mx-3" data-filter=".first">UI/UX Design</li>
-                        <li class="mx-3" data-filter=".second">Graphic Design</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-1.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-2.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-3.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-4.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-5.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="img/project-6.jpg" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Projects End -->
+          // ========== COUNTDOWN TIMER WITH BUTTON ==========
+          function setupCountdown() {
+            const startBtn = document.getElementById('startCountdownBtn');
+            const countdownContainer = document.getElementById('countdown');
+            const countdownComplete = document.getElementById('countdownComplete');
+            const instruction = document.querySelector('.countdown-instruction');
+            
+            startBtn.addEventListener('click', function() {
+                // Hide button and show countdown
+                this.style.display = 'none';
+                instruction.style.display = 'none';
+                countdownContainer.style.display = 'flex';
+                
+                // Set the countdown duration (10 seconds from now)
+                const countdownDate = new Date().getTime() + 10000; // 10 seconds later
+                
+                // Update the countdown every 1 second
+                const countdown = setInterval(function() {
+                    const now = new Date().getTime();
+                    const distance = countdownDate - now;
+                    
+                    // Time calculations for seconds
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                    // Display the result
+                    document.getElementById("seconds").innerHTML = Math.floor(seconds).toString().padStart(2, '0');
+                    
+                    // If the countdown is finished
+                    if (distance < 0) {
+                        clearInterval(countdown);
+                        countdownContainer.style.display = 'none';
+                        countdownComplete.style.display = 'block';
+                        
+                        // Create celebration effects
+                        createFireworks(10);
+                        createConfetti(window.innerWidth/2, 100);
+                        
+                        // Play a sound if you want (uncomment if you add a sound)
+                        // const audio = new Audio('birthday-song.mp3');
+                        // audio.play();
+                    }
+                }, 1000);
+            });
+        }
 
+        // Update the DOMContentLoaded event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingElements();
+            setupWishButtons();
+            setupPhotoModals();
+            setupSparkleEffect();
+            animateSpecialMessage();
+            setupScrollAnimations();
+            setupCountdown(); // This is the updated function
+            setupSurpriseButton();
+            
+            // Show birthday animation on load
+            setTimeout(() => {
+                createConfetti(window.innerWidth/2, 100);
+                createFireworks(5);
+            }, 1000);
+        });
 
-    <!-- Team Start -->
+        // Rest of the JavaScript remains the same
 
-    <!-- Team End -->
+        // ========== SURPRISE BUTTON ==========
+        function setupSurpriseButton() {
+            const surpriseBtn = document.getElementById('surpriseBtn');
+            
+            if (surpriseBtn) {
+                surpriseBtn.addEventListener('click', function() {
+                    // Create lots of fireworks
+                    createFireworks(15);
+                    
+                    // Create confetti
+                    createConfetti(window.innerWidth/2, window.innerHeight/2);
+                    
+                    // Shake the button
+                    this.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 500);
+                    
+                    // Show a random wish modal
+                    const wishTypes = ['fun', 'sweet', 'funny', 'inspirational'];
+                    const randomWish = wishTypes[Math.floor(Math.random() * wishTypes.length)];
+                    const modal = document.getElementById(`${randomWish}WishModal`);
+                    
+                    if (modal) {
+                        setTimeout(() => {
+                            modal.classList.add('active');
+                            document.body.style.overflow = 'hidden';
+                        }, 1000);
+                    }
+                });
+            }
+        }
 
+        // ========== CONFETTI EFFECT ==========
+        function createConfetti(x, y) {
+            const colors = ['#ff6b6b', '#6b5b95', '#ffb3b3', '#8e7dbe', '#ff9999', '#ffd700'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = (x || Math.random() * window.innerWidth) + 'px';
+                confetti.style.top = (y || Math.random() * window.innerHeight) + 'px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = (Math.random() * 8 + 3) + 'px';
+                confetti.style.height = (Math.random() * 8 + 3) + 'px';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                
+                document.body.appendChild(confetti);
+                
+                // Random animation
+                const angle = Math.random() * 360;
+                const distance = Math.random() * 150 + 50;
+                const animation = [
+                    { transform: 'translate(0, 0) rotate(0deg)', opacity: 1 },
+                    { transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ];
+                
+                const timing = {
+                    duration: Math.random() * 1500 + 1000,
+                    iterations: 1
+                };
+                
+                confetti.animate(animation, timing);
+                
+                // Remove confetti after animation
+                setTimeout(() => {
+                    confetti.remove();
+                }, timing.duration);
+            }
+        }
 
-    <!-- Testimonial Start -->
-
-    <!-- Testimonial End -->
-
-
-    <!-- Contact Start -->
-    <div class="container-xxl pb-5" id="contact">
-        <div class="container py-5">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Let's Work Together</h1>
-                </div>
-                <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="">Say Hello</a>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <hr class="w-100">
-                    <p class="mb-2">Call me:</p>
-                    <h3 class="fw-bold">+088 015 6838 0004 </h3>
-                    <hr class="w-100">
-                    <p class="mb-2">Mail me:</p>
-                    <h3 class="fw-bold">fuad57498@gmail.com</h3>
-                    <hr class="w-100">
-                    <p class="mb-2">Follow me:</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/fuad-hasan-rabby04/"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href="https://github.com/thatsfuad"><i class="fab fa-github"></i></a>
-
-                        <a class="btn btn-square btn-primary me-2" href="https://x.com/FuadHassanRabby"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                       
-                    </div>
-                </div>
-                <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
-
-
-    <!-- Map Start -->
-    <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container-xxl pt-5 px-0">
-            <div class="bg-dark">
-                <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                frameborder="0" style="width: 100%; height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
-                tabindex="0"></iframe>
-            </div>
-        </div>
-    </div>
-    <!-- Map End -->
-
-
-    <!-- Copyright Start -->
-    <div class="container-fluid bg-dark text-white py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom text-secondary" href="#">Your Site Name</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom text-secondary" href="https://htmlcodex.com">HTML Codex</a>
-                        <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/typed/typed.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        // ========== FIREWORKS EFFECT ==========
+        function createFireworks(count) {
+            const container = document.getElementById('fireworksContainer');
+            
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight / 2;
+                    createFirework(x, y);
+                }, i * 300);
+            }
+        }
+        
+        function createFirework(x, y) {
+            const container = document.getElementById('fireworksContainer');
+            const colors = ['#ff6b6b', '#6b5b95', '#ffd700', '#ff8e8e', '#8e7dbe', '#ffcc33'];
+            
+            // Create particles
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'firework';
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Random size
+                const size = Math.random() * 5 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                container.appendChild(particle);
+                
+                // Random end position
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 100 + 50;
+                const xEnd = Math.cos(angle) * distance;
+                const yEnd = Math.sin(angle) * distance;
+                
+                // Animate
+                const animation = [
+                    { 
+                        transform: 'translate(0, 0) scale(0)', 
+                        opacity: 1 
+                    },
+                    { 
+                        transform: `translate(${xEnd}px, ${yEnd}px) scale(1)`, 
+                        opacity: 0 
+                    }
+                ];
+                
+                const timing = {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+                };
+                
+                particle.animate(animation, timing);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    particle.remove();
+                }, timing.duration);
+            }
+        }
+    </script>
 </body>
-
 </html>
