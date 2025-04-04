@@ -1166,6 +1166,38 @@
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1.5rem;
         }
+        .author-signature {
+        margin-top: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+    
+    .author-name {
+        color: #ff6b6b;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        font-style: italic;
+    }
+    
+    .author-phone {
+        color: #4ecdc4;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+    
+    .author-signature:hover .author-name {
+        animation: rainbow 2s infinite;
+    }
+    
+    @keyframes rainbow {
+        0% { color: #ff6b6b; }
+        20% { color: #ffb347; }
+        40% { color: #f6e58d; }
+        60% { color: #7ed6df; }
+        80% { color: #e056fd; }
+        100% { color: #ff6b6b; }
+    }
     
     </style>
 </head>
@@ -1318,11 +1350,10 @@
             <button class="footer-btn" id="surpriseBtn">
                 <i class="fas fa-gift"></i> Click for Surprise!
             </button>
-            <div class="footer-quote">
-                Created by Fuad Hassan <br> 
-                <p>Number - 0156838004 (whatsapp) </p>
+            <div class="author-signature">
+                <span class="author-name">Fuad Hassan</span> | 
+                <span class="author-phone">0156838004</span>
             </div>
-            
         </div>
     </footer>
 
