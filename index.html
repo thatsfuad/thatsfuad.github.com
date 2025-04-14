@@ -1,305 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ultimate Birthday Wishes</title>
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600;700&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="stylesheet" href="style.css">
-    </head>
-<body>
-    <!-- Floating Background Elements -->
-    <div class="floating-elements" id="floatingElements"></div>
-
-    <!-- Fireworks Container -->
-    <div class="fireworks-container" id="fireworksContainer"></div>
-
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Header -->
-        <header class="header">
-            <h1 class="animate__animated animate__fadeInDown">Happy Birthday!</h1>
-            <div class="birthday-person animate__animated animate__pulse animate__infinite">Dear [Name]</div>
-            <p class="animate__animated animate__fadeIn">Wishing you a day as wonderful as you are!</p>
-        </header>
-
-        <!-- Wish Container -->
-        <div class="wish-container">
-            <!-- Special Wish Section -->
-            <section id="special-wish" class="wish-section">
-                <div class="wish-header">
-                    <h2 class="wish-title">My Heartfelt Wish</h2>
-                </div>
-                <div class="wish-content">
-                    <div class="heart-decoration">❤️</div>
-                    <div class="heart-decoration">❤️</div>
-                    <div class="special-content">
-                        <div class="special-message">
-                            <span>On</span> <span>your</span> <span>special</span> <span>day,</span>
-                            <br>
-                            <span>I</span> <span>wish</span> <span>you</span> <span>laughter,</span>
-                            <br>
-                            <span>joy,</span> <span>and</span> <span>endless</span> <span>happiness!</span>
-                            <br><br>
-                            <span>May</span> <span>all</span> <span>your</span> <span>dreams</span>
-                            <br>
-                            <span>come</span> <span>true</span> <span>this</span> <span>year!</span>
-                        </div>
-                        <div class="special-signature">With Love</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Countdown Section -->
-            <section class="wish-section countdown-section">
-                <div class="wish-header">
-                    <h2 class="wish-title">Celebration Countdown</h2>
-                </div>
-                <div class="wish-content">
-                    <p class="countdown-instruction">Ready for the birthday surprise? Start the countdown!</p>
-                    <button class="start-countdown-btn" id="startCountdownBtn">
-                        <i class="fas fa-rocket"></i> Start Countdown
-                    </button>
-                    <div class="countdown-container" id="countdown" style="display: none;">
-                        <div class="countdown-box">
-                            <div class="countdown-value" id="days">00</div>
-                            <div class="countdown-label">Days</div>
-                        </div>
-                        <div class="countdown-box">
-                            <div class="countdown-value" id="hours">00</div>
-                            <div class="countdown-label">Hours</div>
-                        </div>
-                        <div class="countdown-box">
-                            <div class="countdown-value" id="minutes">00</div>
-                            <div class="countdown-label">Minutes</div>
-                        </div>
-                        <div class="countdown-box">
-                            <div class="countdown-value" id="seconds">00</div>
-                            <div class="countdown-label">Seconds</div>
-                        </div>
-                    </div>
-                    <div id="countdownComplete" style="display: none;">
-                        <div class="countdown-complete">Happy Birthday! 🎉🎂</div>
-                        <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem;">
-                            Wishing you a day filled with happiness and joy!
-                        </p>
-                    </div>
-                </div>
-            </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
         
-
-            <!-- Photo Gallery Section -->
-            <section class="wish-section">
-                <div class="wish-header">
-                    <h2 class="wish-title">Beautiful Memories</h2>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6b6b;
+            transform: rotate(45deg);
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.7;
+        }
+        
+        .heart:before, .heart:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+        
+        .heart:after {
+            top: 0;
+            left: -10px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(45deg) translateY(0); }
+            50% { transform: rotate(45deg) translateY(-20px); }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h1 {
+            color: #d23669;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .message-box {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-box:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .message {
+            line-height: 1.8;
+            font-size: 1.1em;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .special {
+            color: #d23669;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 30px;
+            font-size: 1.3em;
+            color: #d23669;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        /* Floating hearts */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>❤️ To My Beautiful Love ❤️</h1>
+            <p><em>My heart's sincerest apology...</em></p>
+        </div>
+        
+        <div class="message-box">
+            <div class="message">
+                <p class="special">My Dearest Rabeya begam,</p>
+                
+                <p>✨ As I sit here writing this, my heart aches knowing I've hurt you. ✨</p>
+                
+                <p>🌸 Every moment without your smile feels like an eternity. 🌸</p>
+                
+                <p>💔 I was wrong, so wrong to cause you pain. 💔</p>
+                
+                <p>🌹 Your happiness means more to me than anything in this world. 🌹</p>
+                
+                <p>⭐️ I promise to be better, to cherish you more, to love you deeper. ⭐️</p>
+                
+                <p>💫 Without you, my world loses its color and light. 💫</p>
+                
+                <p>🍃 Please forgive this foolish heart that loves you so completely. 🍃</p>
+                
+                <!-- Continue with 500 lines of heartfelt apology -->
+                <p>🌙 The moon reminds me of your gentle glow... 🌙</p>
+                <p>🌊 Your laughter is the melody that soothes my soul... 🌊</p>
+                <p>🔥 My love for you burns brighter than a thousand suns... 🔥</p>
+                <p>❄️ Your anger freezes my heart with regret... ❄️</p>
+                <p>🌻 I'll spend forever making this right... 🌻</p>
+                <p>🌈 You're the rainbow after all my storms... 🌈</p>
+                <p>⚡️ My world stopped when you got angry... ⚡️</p>
+                <p>🌠 I'll move mountains to see you smile again... 🌠</p>
+                <p>🍂 Without you, I'm just leaves without a tree... 🍂</p>
+                <p>🌌 The stars whisper your name when I sleep... 🌌</p>
+                
+                <!-- Add many more lines until you reach 500 -->
+                
+                <div class="signature">
+                    <p>Forever yours,</p>
+                    <p>Apnar habby </p>
+                    <p>❤️❤️❤️</p>
                 </div>
-                <div class="wish-content">
-                    <div class="photo-gallery">
-                        <div class="photo-item" data-modal="memory1Modal">
-                            <img src="fuad.jpg" alt="Happy Moment" class="photo-img">
-                            <div class="photo-caption">Happy Times Together</div>
-                        </div>
-                        <div class="photo-item" data-modal="memory2Modal">
-                            <img src="fuad.jpg" alt="Celebration" class="photo-img">
-                            <div class="photo-caption">Celebrating Life</div>
-                        </div>
-                        <div class="photo-item" data-modal="memory3Modal">
-                            <img src="fuad.jpg" alt="Adventure" class="photo-img">
-                            <div class="photo-caption">Our Adventures</div>
-                        </div>
-                        <div class="photo-item" data-modal="memory4Modal">
-                            <img src="fuad.jpg" alt="Smiling" class="photo-img">
-                            <div class="photo-caption">Your Beautiful Smile</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Wish Buttons Section -->
-            <section class="wish-section">
-                <div class="wish-header">
-                    <h2 class="wish-title">More Birthday Wishes</h2>
-                </div>
-                <div class="wish-content">
-                    <div class="wish-buttons">
-                        <button class="wish-btn" data-wish="fun">
-                            <i class="fas fa-laugh-beam"></i>
-                            <span class="wish-btn-text">Fun Wish</span>
-                        </button>
-                        <button class="wish-btn" data-wish="sweet">
-                            <i class="fas fa-heart"></i>
-                            <span class="wish-btn-text">Sweet Wish</span>
-                        </button>
-                        <button class="wish-btn" data-wish="funny">
-                            <i class="fas fa-grin-squint-tears"></i>
-                            <span class="wish-btn-text">Funny Wish</span>
-                        </button>
-                        <button class="wish-btn" data-wish="inspirational">
-                            <i class="fas fa-star"></i>
-                            <span class="wish-btn-text">Inspirational</span>
-                        </button>
-                    </div>
-                </div>
-            </section>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Made with love and regret ♥</p>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-hearts">❤️</div>
-        <div class="footer-hearts">❤️</div>
-        <div class="footer-content">
-            <div class="footer-message">Have a Wonderful Birthday!</div>
-            <div class="footer-quote">
-                "Age is merely the number of years the world has been enjoying you!"
-            </div>
-            <button class="footer-btn" id="surpriseBtn">
-                <i class="fas fa-gift"></i> Click for Surprise!
-            </button>
-            <div class="author-signature">
-                <span class="author-name">Created by Fuad Hassan</span> | 
-                <span class="author-name">Number - </span>
-                <span class="author-phone">01568380004</span>
-                <span class="author-name">(Whatsapp)</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Wish Modals -->
-    <div class="wish-modal-overlay" id="funWishModal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Fun Birthday Wish</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <div class="wish-modal-icon">🎉</div>
-                <div class="wish-modal-text">
-                    <p>Happy Birthday to someone who's smart, gorgeous, funny, and reminds me a lot of myself! 😉</p>
-                    <p>May your birthday be as fun as you are! Let's party like there's no tomorrow!</p>
-                </div>
-                <div class="wish-modal-signature">Cheers!</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wish-modal-overlay" id="sweetWishModal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Sweet Birthday Wish</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <div class="wish-modal-icon">💖</div>
-                <div class="wish-modal-text">
-                    <p>On your birthday, I wish you all the happiness your heart can hold, all the success you deserve, and all the love you can imagine.</p>
-                    <p>You make the world a better place just by being in it. May your special day be as wonderful as you are!</p>
-                </div>
-                <div class="wish-modal-signature">With Love</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wish-modal-overlay" id="funnyWishModal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Funny Birthday Wish</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <div class="wish-modal-icon">😂</div>
-                <div class="wish-modal-text">
-                    <p>Happy Birthday! Remember, you're not getting older, you're just becoming a classic!</p>
-                    <p>At your age, you've still got it... it just takes a little longer to find it sometimes!</p>
-                </div>
-                <div class="wish-modal-signature">Your Funny Friend</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wish-modal-overlay" id="inspirationalWishModal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Inspirational Birthday Wish</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <div class="wish-modal-icon">🌟</div>
-                <div class="wish-modal-text">
-                    <p>Happy Birthday! May this year bring you closer to your dreams and fill your life with meaningful moments.</p>
-                    <p>You have so much wonderful potential, and I can't wait to see all the amazing things you'll accomplish this year!</p>
-                </div>
-                <div class="wish-modal-signature">Believe in You</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Memory Modals -->
-    <div class="wish-modal-overlay" id="memory1Modal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Happy Times Together</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <img src="fuad.jpg" alt="Happy Moment" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
-                <div class="wish-modal-text">
-                    <p>Remember this wonderful moment we shared? It was one of those perfect days where everything just felt right.</p>
-                    <p>I cherish all our happy times together and look forward to creating many more beautiful memories with you!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wish-modal-overlay" id="memory2Modal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Celebrating Life</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <img src="fuad.jpg" alt="Celebration" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
-                <div class="wish-modal-text">
-                    <p>This photo captures your beautiful spirit so perfectly! You know how to celebrate life and make every moment special.</p>
-                    <p>May your birthday be filled with the same joy and excitement as this wonderful celebration!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wish-modal-overlay" id="memory3Modal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Our Adventures</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <img src="fuad.jpg" alt="Adventure" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
-                <div class="wish-modal-text">
-                    <p>What an amazing adventure this was! You always bring excitement and joy to every experience.</p>
-                    <p>May this new year of your life be filled with even more wonderful adventures and discoveries!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wish-modal-overlay" id="memory4Modal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Your Beautiful Smile</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <img src="fuad.jpg" alt="Smiling" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
-                <div class="wish-modal-text">
-                    <p>This is one of my favorite photos of you - that radiant smile that lights up any room!</p>
-                    <p>May your birthday be filled with countless reasons to smile just like this, and may your year ahead be as bright as your beautiful smile!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = Math.random() * 100 + 'vh';
+                heart.style.width = (Math.random() * 15 + 5) + 'px';
+                heart.style.height = heart.style.width;
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                heart.style.opacity = Math.random() * 0.5 + 0.3;
+                heartsContainer.appendChild(heart);
+            }
+        }
+        
+        // Typewriter effect for the message
+        function typeWriter() {
+            const message = document.querySelector('.message');
+            const text = message.innerHTML;
+            message.innerHTML = '';
+            
+            let i = 0;
+            function typing() {
+                if (i < text.length) {
+                    message.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typing, Math.random() * 50);
+                }
+            }
+            typing();
+        }
+        
+        // Initialize effects
+        window.onload = function() {
+            createHearts();
+            // typeWriter(); // Uncomment for typewriter effect
+        };
+    </script>
 </body>
 </html>
