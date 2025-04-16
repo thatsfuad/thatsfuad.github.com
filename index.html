@@ -1,237 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Love ❤️</title>
-    <style>
-        body {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            padding: 0;
-            margin: 0;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-        }
-        
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ff6b6b;
-            transform: rotate(45deg);
-            animation: float 5s infinite ease-in-out;
-            opacity: 0.7;
-        }
-        
-        .heart:before, .heart:after {
-            content: '';
-            width: 20px;
-            height: 20px;
-            background-color: #ff6b6b;
-            border-radius: 50%;
-            position: absolute;
-        }
-        
-        .heart:before {
-            top: -10px;
-            left: 0;
-        }
-        
-        .heart:after {
-            top: 0;
-            left: -10px;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: rotate(45deg) translateY(0); }
-            50% { transform: rotate(45deg) translateY(-20px); }
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        h1 {
-            color: #d23669;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .message-box {
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .message-box:before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-            animation: shine 3s infinite;
-        }
-        
-        @keyframes shine {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .message {
-            line-height: 1.8;
-            font-size: 1.1em;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .special {
-            color: #d23669;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-        
-        .signature {
-            text-align: right;
-            font-style: italic;
-            margin-top: 30px;
-            font-size: 1.3em;
-            color: #d23669;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        /* Floating hearts */
-        .floating-hearts {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-    </style>
+    <meta charset="utf-8">
+    <title>Fuad Bin Latif | Portfolio  </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
-    <div class="floating-hearts" id="hearts"></div>
-    
-    <div class="container">
-        <div class="header">
-            <h1>❤️ To My Beautiful Love ❤️</h1>
-            <p><em>My heart's sincerest apology...</em></p>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="text-primary fw-bold m-0">Fuad</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+          
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#skill" class="nav-item nav-link">Skills</a>
+                <a href="#service" class="nav-item nav-link">Services</a>
+            </div>
         
-        <div class="message-box">
-            <div class="message">
-                <p class="special">My Dearest Rabeya begam,</p>
-                
-                <p>✨ As I sit here writing this, my heart aches knowing I've hurt you. ✨</p>
-                
-                <p>🌸 Every moment without your smile feels like an eternity. 🌸</p>
-                
-                <p>💔 I was wrong, so wrong to cause you pain. 💔</p>
-                
-                <p>🌹 Your happiness means more to me than anything in this world. 🌹</p>
-                
-                <p>⭐️ I promise to be better, to cherish you more, to love you deeper. ⭐️</p>
-                
-                <p>💫 Without you, my world loses its color and light. 💫</p>
-                
-                <p>🍃 Please forgive this foolish heart that loves you so completely. 🍃</p>
-                
-                <!-- Continue with 500 lines of heartfelt apology -->
-                <p>🌙 The moon reminds me of your gentle glow... 🌙</p>
-                <p>🌊 Your laughter is the melody that soothes my soul... 🌊</p>
-                <p>🔥 My love for you burns brighter than a thousand suns... 🔥</p>
-                <p>❄️ Your anger freezes my heart with regret... ❄️</p>
-                <p>🌻 I'll spend forever making this right... 🌻</p>
-                <p>🌈 You're the rainbow after all my storms... 🌈</p>
-                <p>⚡️ My world stopped when you got angry... ⚡️</p>
-                <p>🌠 I'll move mountains to see you smile again... 🌠</p>
-                <p>🍂 Without you, I'm just leaves without a tree... 🍂</p>
-                <p>🌌 The stars whisper your name when I sleep... 🌌</p>
-                
-                <!-- Add many more lines until you reach 500 -->
-                
-                <div class="signature">
-                    <p>Forever yours,</p>
-                    <p>Apnar habby </p>
-                    <p>❤️❤️❤️</p>
+            <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
+                <h1 class="text-primary fw-bold m-0">Home</h1>
+            </a>
+           
+            <div class="navbar-nav me-auto py-0">
+                <a href="#project" class="nav-item nav-link">Projects</a>
+
+                <a href="#contact" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-light my-6 mt-0" id="home">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 py-6 pb-0 pt-lg-0">
+                    <h3 class="text-primary mb-3">I'm</h3>
+                    <h1 class="display-3 mb-3">Fuad Bin Latif </h1>
+                    <h2 class="typed-text-output d-inline"></h2>
+                    <div class="typed-text d-none">Full-Stack Web Developer , Software Developer </div>
+                    <div class="d-flex align-items-center pt-5">
+                        <a href="my_Resume.pdf" class="btn btn-primary py-3 px-4 me-5">Download CV</a>
+                        <button type="button" class="btn-play" data-bs-toggle="modal"
+                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h5 class="ms-4 mb-0 d-none d-sm-block">Play Video</h5>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="fuad.jpg" alt="">
+                </div>
+
+            </div>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/fuad-hasan-rabby04/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://github.com/thatsfuad"><i class="fab fa-github"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://x.com/FuadHassanRabby"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                       
+                    </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Video Modal Start -->
+    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
+                            allow="autoplay"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
         
-        <div class="footer">
-            <p>Made with love and regret ♥</p>
+    </div>
+    <h4 class="handwritten" style="font-family: 'Pacifico', cursive; font-size: 48px; color: #007bff; margin: 0; text-align: center;">
+        Welcome to My Portfolio
+    </h4><br>
+
+    <!-- Video Modal End -->
+
+<br> <br> <br> <br> <br>
+    <!-- About Start -->
+    <h3 class="mb-4 text-center" style="font-size: 36px; text-transform: uppercase;">About</h3>
+    <hr style="width: 50%; border: 1px solid #007bff; margin: 10px auto;">
+ 
+    
+
+    <div class="container-xxl py-6" id="about">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-center mb-5">
+                        <div class="years flex-shrink-0 text-center me-4">
+                           
+                        </div>
+                        <h3 class="lh-base mb-0">Full stack web developer </h3>
+                    </div>
+                    <p class="mb-4">Hello! I’m Fuad, a passionate full stack web developer with a strong foundation in both frontend and backend technologies. With a year of hands-on experience, I specialize in creating dynamic and user-friendly web applications using Django, a powerful framework that allows me to build robust backend solutions.
+
+                        My journey in software development has equipped me with a diverse skill set, enabling me to tackle various challenges and deliver high-quality solutions. I thrive on transforming ideas into functional applications, ensuring that each project not only meets the client's needs but also offers an exceptional user experience.
+                        
+                        Whether it's developing RESTful APIs, designing responsive user interfaces, or implementing database solutions, I take pride in my work and strive for excellence in every aspect of the development process. I'm constantly learning and adapting to new technologies, which allows me to stay ahead in this ever-evolving field.</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Afordable Prices</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>High Quality Product</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>On Time Project Delivery</p>
+                  
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6">
+                            <img class="img-fluid rounded" src="img/about-1.jpg" alt="">
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="img-fluid rounded" src="img/about-2.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="border-end pe-3 me-3 mb-0">Happy Clients</h5>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1234</h2>
+                    </div>
+                    <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam ipsum clita labore dolor duo clita.</p>
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="border-end pe-3 me-3 mb-0">Projects Completed</h5>
+                        <h2 class="text-primary fw-bold mb-0" data-toggle="counter-up">1234</h2>
+                    </div>
+                    <p class="mb-0">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam amet diam ipsum clita labore dolor duo clita.</p>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- About End -->
 
-    <script>
-        // Create floating hearts
-        function createHearts() {
-            const heartsContainer = document.getElementById('hearts');
-            for (let i = 0; i < 50; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.top = Math.random() * 100 + 'vh';
-                heart.style.width = (Math.random() * 15 + 5) + 'px';
-                heart.style.height = heart.style.width;
-                heart.style.animationDelay = Math.random() * 5 + 's';
-                heart.style.opacity = Math.random() * 0.5 + 0.3;
-                heartsContainer.appendChild(heart);
-            }
-        }
+
+    <!-- Expertise Start -->
+    <div class="container-xxl py-6 pb-5" id="skill">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-5 mb-5">Skills & Experience</h1>
+                    <p class="mb-4" style="font-size: 18px;">
+                        <strong>Web Development:</strong>
+                        <ul>
+                            <li><strong>Full Stack Development:</strong>
+                                <ul>
+                                    <li><strong>Frontend Technologies:</strong> <strong>HTML, CSS, JavaScript, Bootstrap, React</strong> (or any other frameworks you use)</li>
+                                    <li><strong>Backend Technologies:</strong> <strong>Django, RESTful API development</strong></li>
+                                </ul>
+                            </li>
+                            <li><strong>Programming Languages:</strong>
+                                <ul>
+                                    <li><strong>Python</strong></li>
+                                    <li><strong>JavaScript</strong></li>
+                                    <li><strong>C++</strong></li>
+                                </ul>
+                            </li>
+                            <li><strong>Database Management:</strong>
+                                <ul>
+                                    <li><strong>PostgreSQL</strong></li>
+                                    <li><strong>MySQL</strong></li>
+                                    <li><strong>SQLite</strong></li>
+                                </ul>
+                            </li>
+                            <li><strong>Version Control:</strong>
+                                <ul>
+                                    <li><strong>Git and GitHub</strong></li>
+                                </ul>
+                            </li>
+                            <li><strong>Deployment:</strong>
+                                <ul>
+                                    <li><strong>Heroku</strong></li>
+                                    <li><strong>AWS</strong> (or any other hosting platforms you use)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Tools & Technologies:</strong>
+                                <ul>
+                                    <li><strong>Visual Studio Code</strong></li>
+                                    <li><strong>Postman</strong> (for API testing)</li>
+                                    <li><strong>Docker</strong> (if applicable)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Soft Skills:</strong>
+                                <ul>
+                                    <li><strong>Problem-Solving</strong></li>
+                                    <li><strong>Team Collaboration</strong></li>
+                                    <li><strong>Effective Communication</strong></li>
+                                    <li><strong>Time Management</strong></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
         
-        // Typewriter effect for the message
-        function typeWriter() {
-            const message = document.querySelector('.message');
-            const text = message.innerHTML;
-            message.innerHTML = '';
-            
-            let i = 0;
-            function typing() {
-                if (i < text.length) {
-                    message.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(typing, Math.random() * 50);
-                }
-            }
-            typing();
-        }
-        
-        // Initialize effects
-        window.onload = function() {
-            createHearts();
-            // typeWriter(); // Uncomment for typewriter effect
-        };
-    </script>
+                    
+                    
+                    
+                    
+                </div>
+                
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
+                        <li class="nav-item w-50">
+                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
+                        </li>
+                        <li class="nav-item w-50">
+                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+
+                         <p>
+                            
+                            I am a passionate and dedicated Full Stack Web Developer and Software Developer with a year of experience in building dynamic and scalable web applications. I specialize in backend development using Django and have a strong understanding of frontend technologies like HTML, CSS, JavaScript, and Bootstrap. I am proficient in developing RESTful APIs and managing databases like PostgreSQL, MySQL, and SQLite.
+                            
+                            Throughout my journey, I have successfully completed four projects, honing my skills in both web development and software engineering. I enjoy solving complex problems and delivering high-quality software solutions tailored to the needs of clients. With a focus on clean code and efficiency, I strive to create user-friendly and reliable applications.
+                         </p>
+                        </div>
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                              <p>I am Fuad, currently studying at Jhenaidah Cadet College and pursuing a career as a Full Stack Web Developer and Software Developer. I have recently completed comprehensive courses in Python, Django, Django Rest Framework, HTML, CSS, Bootstrap, JavaScript, and C. Additionally, I have gained expertise in PostgreSQL, MySQL, and SQLite database management systems.
+
+                                Currently, I am expanding my knowledge in C++, further strengthening my programming and problem-solving skills. With a well-rounded foundation in both backend and frontend technologies, I am committed to developing efficient, scalable, and user-friendly web applications.</p>
+                        </div>
+                    </div>
+                    <h3 class="mb-4 text-center" style="font-size: 36px;">My Skills</h3>
+<div class="row align-items-center">
+    <div class="col-md-6">
+        <div class="skill mb-4">
+            <div class="d-flex justify-content-between">
+                <h6 style="font-weight: 500;">HTML/CSS</h6>
+                <h6 style="font-weight: 500;">95%</h6>
+            </div>
+            <div class="progress">
+                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <div class="skill mb-4">
+            <div class="d-flex justify-content-between">
+                <h6 style="font-weight: 500;">JavaScript</h6>
+                <h6 style="font-weight: 500;">85%</h6>
+            </div>
+            <div class="progress">
+                <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <div class="skill mb-4">
+            <div class="d-flex justify-content-between">
+                <h6 style="font-weight: 500;">PHP</h6>
+                <h6 style="font-weight: 500;">80%</h6>
+            </div>
+            <div class="progress">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="skill mb-4">
+            <div class="d-flex justify-content-between">
+                <h6 style="font-weight: 500;">Python</h6>
+                <h6 style="font-weight: 500;">95%</h6>
+            </div>
+            <div class="progress">
+                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <div class="skill mb-4">
+            <div class="d-flex justify-content-between">
+                <h6 style="font-weight: 500;">Django/RESTful API</h6>
+                <h6 style="font-weight: 500;">95%</h6>
+            </div>
+            <div class="progress">
+                <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+        <div class="skill mb-4">
+            <div class="d-flex justify-content-between">
+                <h6 style="font-weight: 500;">C++</h6>
+                <h6 style="font-weight: 500;">80%</h6>
+            </div>
+            <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Expertise End -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid bg-light my-5 py-6" id="service">
+        <div class="container">
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">My Services</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary py-3 px-5" href="#contact">Hire Me</a>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-code fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Front-end</h4>
+                           
+                            <span>As a front-end developer, I specialize in creating responsive, user-friendly interfaces using HTML, CSS, and JavaScript. I focus on delivering clean, efficient code to enhance user experience and ensure seamless interaction across different devices and browsers.</span>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-laptop-code fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Back-end</h4>
+                            
+                            <span>As a back-end developer, I design and implement server-side logic, databases, and APIs using technologies like Django and Python. I focus on optimizing performance, ensuring security, and integrating with front-end systems to create robust and scalable web applications.</span>
+                        </div>
+                    </div>
+             
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-code fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Full-stack developer</h4>
+                          
+                            <span>As a full-stack developer, I create dynamic web applications by combining front-end and back-end technologies. I specialize in building responsive interfaces, managing databases, and developing APIs, ensuring seamless user experiences and efficient data handling across platforms.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-code-branch fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Python and Django </h4>
+                      
+                            <span>As a Python and Django developer, I create scalable web applications leveraging the power of Python and the Django framework. I focus on building efficient APIs, managing databases, and ensuring secure, high-performance solutions tailored to user needs.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Projects Start -->
+    <div class="container-xxl py-6 pt-5" id="project">
+        <div class="container">
+            <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">My Projects</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
+                        <li class="mx-3 active" data-filter="*">All Projects</li>
+                        <li class="mx-3" data-filter=".first">UI/UX Design</li>
+                        <li class="mx-3" data-filter=".second">Graphic Design</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 portfolio-item first">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/project-1.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-1.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/project-2.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-2.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item first">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/project-3.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-3.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/project-4.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-4.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item first">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/project-5.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-5.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second">
+                    <div class="portfolio-img rounded overflow-hidden">
+                        <img class="img-fluid" src="img/project-6.jpg" alt="">
+                        <div class="portfolio-btn">
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href="img/project-6.jpg" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-secondary border-2 mx-1" href=""><i class="fa fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projects End -->
+
+
+    <!-- Team Start -->
+
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+
+    <!-- Testimonial End -->
+
+
+    <!-- Contact Start -->
+    <div class="container-xxl pb-5" id="contact">
+        <div class="container py-5">
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">Let's Work Together</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary py-3 px-5" href="">Say Hello</a>
+                </div>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <hr class="w-100">
+                    <p class="mb-2">Call me:</p>
+                    <h3 class="fw-bold">+088 015 6838 0004 </h3>
+                    <hr class="w-100">
+                    <p class="mb-2">Mail me:</p>
+                    <h3 class="fw-bold">fuad57498@gmail.com</h3>
+                    <hr class="w-100">
+                    <p class="mb-2">Follow me:</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-square btn-primary me-2" href="https://www.linkedin.com/in/fuad-hasan-rabby04/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href="https://github.com/thatsfuad"><i class="fab fa-github"></i></a>
+
+                        <a class="btn btn-square btn-primary me-2" href="https://x.com/FuadHassanRabby"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+
+    <!-- Map Start -->
+    <div class="container-xxl pt-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container-xxl pt-5 px-0">
+            <div class="bg-dark">
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                frameborder="0" style="width: 100%; height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- Map End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom text-secondary" href="#">Your Site Name</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom text-secondary" href="https://htmlcodex.com">HTML Codex</a>
+                        <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
