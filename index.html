@@ -44,6 +44,61 @@
             --font-special: 'Montserrat', sans-serif;
         }
 
+                /* দুয়া মেশিন */
+        .wish-section {
+            padding: 100px 5%;
+            text-align: center;
+            background: linear-gradient(to bottom, #0F172A, #1E3A8A);
+            position: relative;
+        }
+        
+        .wish-machine {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--gold);
+        }
+        
+        .wish-input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--gold);
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        
+        .wish-button {
+            background: var(--gold);
+            color: var(--blue);
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .wish-button:hover {
+            background: var(--green);
+            color: white;
+        }
+        
+        .ameen-text {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: var(--gold);
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+
         /* ========== BASE STYLES ========== */
         * {
             margin: 0;
@@ -1324,6 +1379,27 @@
 
 
 
+
+        <!-- দুয়া মেশিন -->
+    <section class="wish-section">
+        <div class="wish-machine">
+            <h2>📿 দুয়া মেশিন</h2>
+            <p>একটি দুয়া করুন, আল্লাহ তা কবুল করুন</p>
+            
+            <input type="text" class="wish-input" placeholder="আপনার দুয়া লিখুন..." id="wish-input">
+            <button class="wish-button" onclick="makeWish()">দুয়া করুন</button>
+            
+            <div class="ameen-text" id="ameen-text">
+                আমিন! আল্লাহ তোমার দুয়া কবুল করুন, আমার জান ❤️
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
             <!-- Wish Buttons Section -->
             <section class="wish-section">
                 <div class="wish-header">
@@ -1360,12 +1436,12 @@
         <div class="footer-content">
             <div class="footer-message">Have a Wonderful Birthday!</div>
             <div class="footer-quote">
-                "Age is merely the number of years the world has been enjoying you!"
+                "Age is merely the number of years the world has been enjoying you....my wife "
             </div>
             <button class="footer-btn" id="surpriseBtn">
                 <i class="fas fa-gift"></i> Click for Surprise!
             </button>
-            <div class="copyright">© 2023 Birthday Wishes | Made with ❤️</div>
+            <div class="copyright">© 2023 Birthday Wishes | Made with tmr bor ❤️</div>
         </div>
     </footer>
 
@@ -1380,9 +1456,9 @@
                 <div class="wish-modal-icon">🎉</div>
                 <div class="wish-modal-text">
                     <p>Happy Birthday to someone who's smart, gorgeous, funny, and reminds me a lot of myself! 😉</p>
-                    <p>May your birthday be as fun as you are! Let's party like there's no tomorrow!</p>
+                    <p>May your birthday be as fun as you are! ar sathe ai naw ummmmmmmmmmmmaaaaaaaah </p>
                 </div>
-                <div class="wish-modal-signature">Cheers!</div>
+                <div class="wish-modal-signature">ummmmmmmmmmmmaaaaaaaah again madam </div>
             </div>
         </div>
     </div>
@@ -1416,7 +1492,7 @@
                     <p>Happy Birthday! Remember, you're not getting older, you're just becoming a classic!</p>
                     <p>At your age, you've still got it... it just takes a little longer to find it sometimes!</p>
                 </div>
-                <div class="wish-modal-signature">Your Funny Friend</div>
+                <div class="wish-modal-signature">Your love</div>
             </div>
         </div>
     </div>
@@ -1433,75 +1509,11 @@
                     <p>Happy Birthday! May this year bring you closer to your dreams and fill your life with meaningful moments.</p>
                     <p>You have so much wonderful potential, and I can't wait to see all the amazing things you'll accomplish this year!</p>
                 </div>
-                <div class="wish-modal-signature">Believe in You</div>
+                <div class="wish-modal-signature">Believe in You my madam </div>
             </div>
         </div>
     </div>
 
-    <!-- Memory Modals -->
-    <div class="wish-modal-overlay" id="memory1Modal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Happy Times Together</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <img src="https://i.imgur.com/JqYeYn0.jpg" alt="Happy Moment" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
-                <div class="wish-modal-text">
-                    <p>Remember this wonderful moment we shared? It was one of those perfect days where everything just felt right.</p>
-                    <p>I cherish all our happy times together and look forward to creating many more beautiful memories with you!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wish-modal-overlay" id="memory2Modal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Celebrating Life</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <img src="https://i.imgur.com/7V7DfHj.jpg" alt="Celebration" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
-                <div class="wish-modal-text">
-                    <p>This photo captures your beautiful spirit so perfectly! You know how to celebrate life and make every moment special.</p>
-                    <p>May your birthday be filled with the same joy and excitement as this wonderful celebration!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wish-modal-overlay" id="memory3Modal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Our Adventures</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <img src="https://i.imgur.com/5R5q7QK.jpg" alt="Adventure" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
-                <div class="wish-modal-text">
-                    <p>What an amazing adventure this was! You always bring excitement and joy to every experience.</p>
-                    <p>May this new year of your life be filled with even more wonderful adventures and discoveries!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="wish-modal-overlay" id="memory4Modal">
-        <div class="wish-modal-content">
-            <div class="wish-modal-header">
-                <h3 class="wish-modal-title">Your Beautiful Smile</h3>
-                <button class="close-wish-modal">&times;</button>
-            </div>
-            <div class="wish-modal-body">
-                <img src="https://i.imgur.com/8KQ3Y9f.jpg" alt="Smiling" class="photo-img" style="width:100%;border-radius:var(--border-radius);margin-bottom:1.5rem;">
-                <div class="wish-modal-text">
-                    <p>This is one of my favorite photos of you - that radiant smile that lights up any room!</p>
-                    <p>May your birthday be filled with countless reasons to smile just like this, and may your year ahead be as bright as your beautiful smile!</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
         // ========== INITIALIZATION ==========
@@ -1946,6 +1958,20 @@
                 }, timing.duration);
             }
         }
+
+                // দুয়া মেশিন
+        function makeWish() {
+            const wish = document.getElementById('wish-input').value;
+            if (wish.trim() !== '') {
+                document.getElementById('ameen-text').style.opacity = '1';
+                
+                // Create stars animation
+                for (let i = 0; i < 20; i++) {
+                    createStar();
+                }
+            }
+        }
+        
     </script>
 </body>
 </html>
